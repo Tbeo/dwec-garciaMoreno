@@ -13,8 +13,60 @@
   <link href="css/estilos.css" rel="stylesheet">
 </head>
 <body>
+    <!--Tabla usando una clase de bootstrap-->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Empresa que lo desarrolla</th>
+                <th>motor de renderizado</th>
+                <th>motor de JavaScript</th>
+                <th>¿Basado en chromium?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Chrome</th>
+                <th>Google</th>
+                <th>Blink</th>
+                <th>V8</th>
+                <th>Si</th>        
+            </tr>
+                <th>Firefox</th>
+                <th>Mozilla</th>
+                <th>Gecko</th>
+                <th>SpiderMonkey</th>
+                <th>No</th>
+            <tr>
+                <th>Safari</th>
+                <th>Apple</th>
+                <th>WebKit</th>
+                <th>JavaScriptCore</th>
+                <th>No</th>
+            </tr>
+            <tr>
+                <th>Edge</th>
+                <th>Microsoft</th>
+                <th>Blink</th>
+                <th>V8</th>
+                <th>Si</th>
+            </tr>
+            <tr>
+                <th>Opera</th>
+                <th>Opera</th>
+                <th>Blink</th>
+                <th>V8</th>
+                <th>Si</th>
+            </tr>
+        </tbody>
+    </table>
 
-  <!-- Aquí va tu contenido -->
+    <p>¿Por qué casi todos los navegadores comparten motor?
+    El hecho de compartir motor facilita la implementación de estándares web, de esta manera se puede facilitar el uso de la programación web y 
+    reduce el trabajo necesario para mantener un navegador. 
+    La mayoría de los navegadores comparten Chromium, por lo que blink y V8 ofrece una base tecnológica común y desarrollada. 
+    Esto hace que los principales navegadores que quedan fuera son Firefox, y Safari. Por lo tanto, una página puede comportarse de forma ligeramente diferente según el navegador. 
+    Usar estándares web, comprobando la compatibilidad de las funciones que se utilicen y evitar depender de característias exclusivas de un motor son buenas prácticas a realizar por un desarrollador web, consiguiendo una web más compatible, accesible y consistente para diferentes usuarios y dispositivos.</p>
 
   <!-- JS de Bootstrap (navbar que se pliega, modales, dropdowns...). Al final del body -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
