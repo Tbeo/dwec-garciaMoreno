@@ -8,7 +8,7 @@ Sitio de dos páginas con Bootstrap: `index.html` (navegadores y motores) e `int
 ## 1. Capturas
 
 ### a) index.html en el ordenador
-![index.html en el ordenador](capturas/01-index-escritorio.png)
+![index.html en el ordenador](CapturaEdge.png)
 
 [Se ve la página de navegadores con mi nombre en la navbar y la tabla de los cinco navegadores.]
 
