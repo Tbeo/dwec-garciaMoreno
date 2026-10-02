@@ -1,5 +1,5 @@
 //Boton de saludar
-function Saludar(){
+function saludar(){
     console.log("Boton saludar pulsado");
     alert("Saludos, soy Jorge García Moreno");
 }
@@ -9,6 +9,9 @@ function simularError(){
 }
 
 function funcionNavegador(){
-    alert("Valor de navigator.userAgent: ", navigator.userAgent);
-    console.log("Tercer boton de navegador pulsado", navigator.userAgent);
+    const infoUserAgent = navigator.userAgent;
+    //alert solo acepta una variable que engloba el texto, no puedo darle dos cosas.
+    const valorTotal = "¿En qué navegador estoy?: " + navigator.userAgent;
+    alert(valorTotal);
+    console.log("Tercer boton de navegador pulsado", infoUserAgent);
 }
