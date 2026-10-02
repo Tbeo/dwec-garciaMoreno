@@ -80,6 +80,21 @@
         Esto hace que los principales navegadores que quedan fuera son Firefox, y Safari. Por lo tanto, una página puede comportarse de forma ligeramente diferente según el navegador. 
         Usar estándares web, comprobando la compatibilidad de las funciones que se utilicen y evitar depender de característias exclusivas de un motor son buenas prácticas a realizar por un desarrollador web, consiguiendo una web más compatible, accesible y consistente para diferentes usuarios y dispositivos.</p>
     </div>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">CSS SUBGRID</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Chrome un paso atrás</h6>
+            <p class="card-text">Un ejemplo real de compatibilidad es CSS Subgrid, una característica de CSS Grid que permite a un elemento utilizar las filas o columnas definidas por su elemento padre. Según Can I Use, Chrome no incorporó soporte hasta la versión 117, mientras que Firefox lo hizo desde la 71 y Safari desde la 16.0. Esto demuestra que una característica puede funcionar en un navegador y no hacerlo en versiones anteriores de otros navegadores. Por ello, los desarrolladores deben comprobar la compatibilidad antes de utilizar nuevas tecnologías y proporcionar alternativas cuando sea necesario.</p>
+            <a href="#" class="card-link">https://caniuse.com/css-subgrid</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <p>Primero probaría con Chrome por Windows y Android, luego pienso que debería de probarlo en Safari porque utiliza WebKit y puede comportarse de manera diferente a Chromium. Como tercera opción probaría con Edge de Windows ya que es importante en escritorio y también esta disponible en móbil. Por último probaria Firefox por la compatibildad en Gecko.</p>
+    </div>
+
+
   <!-- JS de Bootstrap (navbar que se pliega, modales, dropdowns...). Al final del body -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
