@@ -51,4 +51,4 @@ EN el de Firefox puede observar que utiliza Gecko mientras que el de Microsoft E
 
 ## Uso de IA
 
-He usado [Claude] para orientarme en la estructura del README. Después [escribí y probé yo el código, lo adapté a mi proyecto y redacté con mis palabras las explicaciones y la comparación de los userAgent].
+He usado [Claude] para orientarme en la estructura del README y elaborarlo y para documentarme sobre fuentes fiables para las tareas de búsqueda de información.
