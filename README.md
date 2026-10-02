@@ -3,7 +3,7 @@
 **Autor:** Jorge García Moreno
 **Asignatura:** Desarrollo Web Entornos Cliente · Tema 2
 
-Sitio de dos páginas con Bootstrap: `index.html` (navegadores y motores) e `interaccion.html` (tres botones con JavaScript y trazas en la consola). Lo he probado con Live Server en [Chrome] y [Firefox].
+Sitio de dos páginas con Bootstrap: `index.html` (navegadores y motores) e `interaccion.html` (tres botones con JavaScript y trazas en la consola). Lo he probado con Live Server en [MicrosoftEdge] y [Firefox].
 
 ## 1. Capturas
 
@@ -35,29 +35,20 @@ Sitio de dos páginas con Bootstrap: `index.html` (navegadores y motores) e `int
 
 ## 2. Quién hace qué (botón «Saludar»)
 
-- **HTML:** crea el botón con `<button type="button" onclick="saludar()">` y el atributo `onclick`, que indica qué función se ejecuta al pulsar. También enlaza `js/app.js` al final del `body`.
-- **Bootstrap (CSS):** las clases `btn` y `btn-primary` le dan el color, el tamaño, los bordes redondeados y el efecto al pasar el ratón. No he escrito CSS propio.
-- **JavaScript:** la función `saludar()` de `app.js` es la que hace algo: escribe una traza con `console.log()` y muestra un `alert()` con mi nombre.
-
-Sin HTML no habría botón, sin Bootstrap sería un botón gris por defecto y sin JavaScript no pasaría nada al pulsarlo.
+- **HTML:** Crea el botón con `<button type="button" onclick="saludar()">` y el atributo `onclick`, que indica qué función se ejecuta al pulsar.
+- **Bootstrap (CSS):** Utilizo el estilo determinado por la biblioteca de css de Bootstrap.
+- **JavaScript:** La función `saludar()` de `app.js` es la que hace algo: escribe una traza con `console.log()` y muestra un `alert()` con mi nombre.
 
 ## 3. Comparación de los dos userAgent
-
-**Chrome:**
-`[pega aquí el userAgent que has obtenido]`
-
-**Firefox:**
-`[pega aquí el userAgent que has obtenido]`
-
-[Escribe con tus palabras lo que reconoces: sistema operativo, versión del navegador, etc.] Palabras como `Mozilla`, `AppleWebKit` o `Safari` aparecen por herencia histórica: hace años, muchas webs enviaban contenido distinto según el navegador y solo servían la versión completa a «Mozilla» (Netscape). Para no quedarse fuera, los navegadores nuevos fueron copiando en su cadena los nombres de los anteriores. Chrome (motor Blink, derivado de WebKit) mantiene `AppleWebKit`, `KHTML, like Gecko` y `Safari` para que las webs lo traten como un navegador moderno. Firefox usa Gecko y conserva `Mozilla/5.0` y `Gecko/20100101`, pero no incluye `AppleWebKit` ni `Safari`. [Comenta si en tus resultados lo has comprobado.]
+EN el de Firefox puede observar que utiliza Gecko mientras que el de Microsoft Edge se ve que utiliza como motor Chrome.
 
 ## 4. Fuentes consultadas
 
 - [Apuntes y presentación del Tema 2 (campus virtual)]
-- [Enlace real de la fuente 1 que hayas consultado]
-- [Enlace real de la fuente 2 que hayas consultado]
-- [Enlace de caniuse.com con la característica elegida (fecha de consulta: __/__/2026)]
+- [Enlace para conocer sobre Chromium y Blink](https://www.chromium.org/blink/?utm_source=chatgpt.com)
+- [StatCounter para conocer los buscadores web mas usados](https://gs.statcounter.com/browser-market-share/desktop-mobile/spain?utm_source=chatgpt.com)
+- [Can I use: nombre de la característica](https://caniuse.com/enlace-exacto)
 
 ## Uso de IA
 
-He usado [Claude] para [entender cómo se conectan los botones con las funciones de app.js mediante onclick y para orientarme en la estructura del README]. Después [escribí y probé yo el código, lo adapté a mi proyecto y redacté con mis palabras las explicaciones y la comparación de los userAgent].
+He usado [Claude] para orientarme en la estructura del README. Después [escribí y probé yo el código, lo adapté a mi proyecto y redacté con mis palabras las explicaciones y la comparación de los userAgent].
