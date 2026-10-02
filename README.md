@@ -8,28 +8,28 @@ Sitio de dos páginas con Bootstrap: `index.html` (navegadores y motores) e `int
 ## 1. Capturas
 
 ### a) index.html en el ordenador
-![index.html en el ordenador](CapturaEdge.png)
+![index.html en el ordenador](./tema02/capturas/CapturaEdge.png)
 
 [Se ve la página de navegadores con mi nombre en la navbar y la tabla de los cinco navegadores.]
 
 ### b) interaccion.html en modo dispositivo
-![interaccion.html simulando un móvil](capturas/02-interaccion-movil.png)
+![interaccion.html simulando un móvil](./tema02/capturas/Interaccion-Movil.png)
 
 [Vista de F12 → barra de dispositivos simulando un móvil: los botones se apilan y no hay scroll horizontal.]
 
 ### c) Consola con las trazas de los tres botones
-![Consola con las trazas](capturas/03-consola.png)
+![Consola con las trazas](./tema02/capturas/TrazasBotones.png)
 
 [Aparecen el console.log de «Saludar», el console.error en rojo de «Simular un error» y el console.log del userAgent.]
 
 ### d) alert() de «¿Qué navegador soy?» en los dos navegadores
-![alert en Chrome](capturas/04-alert-chrome.png)
-![alert en Firefox](capturas/04-alert-firefox.png)
+![alert en Edge](./tema02/capturas/CapturaEdge.png)
+![alert en Firefox](./tema02/capturas/CapturaFirefox.png)
 
 [Cada navegador muestra un userAgent distinto.]
 
 ### e) VS Code con Live Server
-![VS Code con Live Server](capturas/05-vscode-liveserver.png)
+![VS Code con Live Server](./tema02/capturas/VSCodeLiveServer.png)
 
 [Carpeta tema02 abierta en VS Code y Live Server en marcha.]
 
