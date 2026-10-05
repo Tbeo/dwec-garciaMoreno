@@ -20,6 +20,11 @@ function ejercicio1() {
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
 
+  const nombre = "jorge";     //String 
+  const booleaneano = false;  //Booleano
+  const Null = null;          //Nulo
+  let undefined ;
+
   // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
   //       const si no va a cambiar; let para al menos una a la que des valor más tarde.
   // TODO: muestra en la consola el valor y el typeof de cada una, como en el ejemplo.
