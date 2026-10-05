@@ -1,54 +1,57 @@
-# Tarea 2. Navegadores, motores y mi primera página interactiva
+# Tarea 3 · Variables, tipos y conversiones
 
-**Autor:** Jorge García Moreno
-**Asignatura:** Desarrollo Web Entornos Cliente · Tema 2
+**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-Sitio de dos páginas con Bootstrap: `index.html` (navegadores y motores) e `interaccion.html` (tres botones con JavaScript y trazas en la consola). Lo he probado con Live Server en [MicrosoftEdge] y [Firefox].
+> **Plantilla de la tarea 3.** Cómo usarla:
+>
+> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema03`.
+> 2. `index.html` trae la card del ejercicio 1 como modelo: cópiala para los ejercicios 2, 3 y 4.
+> 3. `js/app.js` trae una función por ejercicio: escribe tu código donde pone `TODO`.
+> 4. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
+> 5. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
 
-## 1. Capturas
+[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live**, abrir la consola con F12 y pulsar «Ejecutar» en cada ejercicio.]
 
-### a) index.html en el ordenador
-![index.html en el ordenador](./capturas/CapturaEdge.png)
+## Capturas
 
-[Se ve la página de navegadores con mi nombre en la navbar y la tabla de los cinco navegadores.]
+### a) La página entera
 
-### b) interaccion.html en modo dispositivo
-![interaccion.html simulando un móvil](./capturas/Interaccion-Movil.png)
+<img src="capturas/a-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
-[Vista de F12 → barra de dispositivos simulando un móvil: los botones se apilan y no hay scroll horizontal.]
+[Qué se ve: tu nombre en la navbar, las cuatro cards y los fallos de predicción marcados.]
 
-### c) Consola con las trazas de los tres botones
-![Consola con las trazas](./capturas/TrazasBotones.png)
+### b) Consola del ejercicio 1
 
-[Aparecen el console.log de «Saludar», el console.error en rojo de «Simular un error» y el console.log del userAgent.]
+![Consola del ejercicio 1](capturas/b-consola-ej1.png)
 
-### d) alert() de «¿Qué navegador soy?» en los dos navegadores
-![alert en Edge](./capturas/CapturaEdge.png)
-![alert en Firefox](./capturas/CapturaFirefox.png)
+[Qué se ve, en una o dos líneas.]
 
-[Cada navegador muestra un userAgent distinto.]
+### c) Consola del ejercicio 2
 
-### e) VS Code con Live Server
-![VS Code con Live Server](./capturas/VSCodeLiveServer.png)
+![Consola del ejercicio 2](capturas/c-consola-ej2.png)
 
-[Carpeta tema02 abierta en VS Code y Live Server en marcha.]
+[Qué se ve, en una o dos líneas.]
 
-## 2. Quién hace qué (botón «Saludar»)
+### d) Consola del ejercicio 3
 
-- **HTML:** Crea el botón con `<button type="button" onclick="saludar()">` y el atributo `onclick`, que indica qué función se ejecuta al pulsar.
-- **Bootstrap (CSS):** Utilizo el estilo determinado por la biblioteca de css de Bootstrap.
-- **JavaScript:** La función `saludar()` de `app.js` es la que hace algo: escribe una traza con `console.log()` y muestra un `alert()` con mi nombre.
+![Consola del ejercicio 3](capturas/d-consola-ej3.png)
 
-## 3. Comparación de los dos userAgent
-EN el de Firefox puede observar que utiliza Gecko mientras que el de Microsoft Edge se ve que utiliza como motor Chrome.
+[Qué se ve, en una o dos líneas.]
 
-## 4. Fuentes consultadas
+### e) Consola del ejercicio 4, con el error de la const
 
-- [Apuntes y presentación del Tema 2 (campus virtual)]
-- [Enlace para conocer sobre Chromium y Blink](https://www.chromium.org/blink/?utm_source=chatgpt.com)
-- [StatCounter para conocer los buscadores web mas usados](https://gs.statcounter.com/browser-market-share/desktop-mobile/spain?utm_source=chatgpt.com)
-- [Can I use: nombre de la característica](https://caniuse.com/enlace-exacto)
+![Consola del ejercicio 4 con el error de la const](capturas/e-consola-ej4.png)
+
+[Qué se ve, en una o dos líneas.]
+
+## Reflexión
+
+[De 5 a 8 líneas: ¿qué conversiones te resultaron más intuitivas y cuáles te sorprendieron? Pon ejemplos concretos de tus tablas.]
+
+## Fuentes
+
+- [Título de la página](https://enlace-a-la-fuente)
 
 ## Uso de IA
 
-He usado [Claude] para orientarme en la estructura del README y elaborarlo y para documentarme sobre fuentes fiables para las tareas de búsqueda de información.
+[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
