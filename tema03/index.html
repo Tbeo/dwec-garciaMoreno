@@ -241,20 +241,20 @@
               <tr><th scope="col">Expresion</th><th scope="col">Espero</th><th scope="col">Sale</th><th scope="col">Manda</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">"5" - 2</th><td><code>3</code></td><td><code>3</code></td><td><code>numero</code></tr>
-              <tr><th scope="row">20 - "20"</th><td><code>0</code></td><td><code>0</code></td><td><code>numero</code></td></tr>
-              <tr><th scope="row">null + 1</th><td><code>1</code></td><td><code>1</code></td><td><code>numero</code></td></tr>
-              <tr><th scope="row">"true" - 1</th><td><code>NaN</code></td><td><code>NaN</code></td><td><code>numero</code></td></tr>
-              <tr><th scope="row">"5" != 5</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></td></tr>
-              <tr><th scope="row">5 + "4"</th><td><code>"54"</code></td><td><code>"54"</code></td><td><code>cadena</code></td></tr>
-              <tr><th scope="row">5 + "4"</th><td><code>"54"</code></td><td><code>"54"</code></td><td><code>cadena</code></td></tr>
+              <tr><th scope="row">"5" - 2</th><td><code>3</code></td><td><code>3</code></td><td><code>manda el numero</code></tr>
+              <tr><th scope="row">20 - "20"</th><td><code>0</code></td><td><code>0</code></td><td><code>manda el numero</code></td></tr>
+              <tr><th scope="row">null + 1</th><td><code>1</code></td><td><code>1</code></td><td><code>manda el numero</code></td></tr>
+              <tr><th scope="row">"true" - 1</th><td><code>NaN</code></td><td><code>NaN</code></td><td><code>manda el numero</code></td></tr>
+              <tr><th scope="row">"5" != 5</th><td><code>true</code></td><td><code>true</code></td><td><code>manda la cadena</code></td></tr>
+              <tr><th scope="row">5 + "4"</th><td><code>"54"</code></td><td><code>"54"</code></td><td><code>manda la cadena</code></td></tr>
+              <tr><th scope="row">5 + "4"</th><td><code>"54"</code></td><td><code>"54"</code></td><td><code>manda la cadena</code></td></tr>
               
-              <tr><th scope="row">5 == "5"</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></tr>
-              <tr><th scope="row">5 === "5"</th><td><code>false</code></td><td><code>false</code></td><td><code>cadena</code></tr>
-              <tr><th scope="row">0 == false</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></tr>
-              <tr><th scope="row">0 === false</th><td><code>false</code></td><td><code>false</code></td><td><code>cadena</code></tr>
-              <tr><th scope="row">null == undefined</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></tr>
-              <tr><th scope="row">null === undefined</th><td><code>false</code></td><td><code>false</code></td><td><code>cadena</code></tr>
+              <tr><th scope="row">5 == "5"</th><td><code>true</code></td><td><code>true</code></td><td><code>manda la cadena</code></tr>
+              <tr><th scope="row">5 === "5"</th><td><code>false</code></td><td><code>false</code></td><td><code>manda la cadena</code></tr>
+              <tr><th scope="row">0 == false</th><td><code>true</code></td><td><code>true</code></td><td><code>manda la cadena</code></tr>
+              <tr><th scope="row">0 === false</th><td><code>false</code></td><td><code>false</code></td><td><code>manda la cadena</code></tr>
+              <tr><th scope="row">null == undefined</th><td><code>true</code></td><td><code>true</code></td><td><code>manda la cadena</code></tr>
+              <tr><th scope="row">null === undefined</th><td><code>false</code></td><td><code>false</code></td><td><code>manda la cadena</code></tr>
 
             </tbody>
           </table>
@@ -273,6 +273,61 @@
       </div>
     </section>
 
+    <!--Ejercicio 4-->
+    <section class="card mb-4 shadow-sm">
+
+      <!-- 1) Ficha con plantillas de cadena -->
+      <div class="card-header d-flex align-items-center gap-2">
+        <span class="badge text-bg-primary">Ejercicio 4</span>
+        <h2 class="h5 mb-0">Tu ficha con plantillas de cadena</h2>
+      </div>
+
+      <div class="card-body">
+
+        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio4() de js/app.js.
+                Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
+        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio4() {
+  console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
+
+  // Tus datos, con const
+  const nombre = "Jorge Garcia Moreno";
+  const ciclo = "2026-2027";
+  const curso = "2º, Desarrollo de Entorno Cliente";
+  const aficion = "Jugar videojuegos";
+  let horasEstudio = 5; // ejemplo de dato que cambia
+  horasEstudio += 5;
+  // TODO: ciclo, curso y una afición, también con const.
+
+  // Un dato que cambia, con let
+  // TODO: por ejemplo, las horas que has estudiado esta semana. Después súmale algo con +=.
+
+  // La ficha con plantilla de cadena: backticks (`) y ${ }
+  const ficha = `Soy ${nombre}, estudio ${curso} durante los años ${ciclo}, he estudiado ${horasEstudio} horas a la semana y me gusta ${aficion}.`;
+  // TODO: completa la ficha con todos tus datos y muéstrala con alert() y en la consola.
+  console.log(ficha);
+  alert(ficha);
+  // TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola.
+  const fichaMas = "Soy " + nombre + ", estudio " + curso + " durante los años " + ciclo + ", he estudiado " + horasEstudio + " horas a la semana y me gusta " + aficion + ".";
+  console.log(fichaMas);
+  alert(fichaMas);
+  // TODO: compara las dos con === y muestra el resultado en la consola: tiene que salir true.
+  console.log(ficha===fichaMas);
+  // Recuerda: el error de dar otro valor a una const se provoca en la consola del navegador, no aquí.
+  //Doy valor a ficha:
+  //ficha = "cambio su valor"; // Esto es lo que deberia de hacer en la consola
+
+}
+      </div>
+
+      <div class="alert alert-danger"> Mensaje de error: No se puede asignar un nuevo valor a una constante.</div>
+
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="ejercicio4()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 4
+        </button>
+        <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
+      </div>
+    </section>
 
   </main>
 

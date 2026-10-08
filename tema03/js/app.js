@@ -110,7 +110,7 @@ function ejercicio4() {
   const ciclo = "2026-2027";
   const curso = "2º, Desarrollo de Entorno Cliente";
   const aficion = "Jugar videojuegos";
-  let horasEstudio = 10; // ejemplo de dato que cambia
+  let horasEstudio = 5; // ejemplo de dato que cambia
   horasEstudio += 5;
   // TODO: ciclo, curso y una afición, también con const.
 
@@ -123,7 +123,12 @@ function ejercicio4() {
   console.log(ficha);
   alert(ficha);
   // TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola.
+  const fichaMas = "Soy " + nombre + ", estudio " + curso + " durante los años " + ciclo + ", he estudiado " + horasEstudio + " horas a la semana y me gusta " + aficion + ".";
+  console.log(fichaMas);
+  alert(fichaMas);
   // TODO: compara las dos con === y muestra el resultado en la consola: tiene que salir true.
-
+  console.log(ficha===fichaMas);
   // Recuerda: el error de dar otro valor a una const se provoca en la consola del navegador, no aquí.
+  //Doy valor a ficha:
+  //ficha = "cambio su valor"; // Esto es lo que deberia de hacer en la consola
 }
