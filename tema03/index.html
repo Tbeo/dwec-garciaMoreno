@@ -207,10 +207,27 @@
 
       <div class="card-body">
 
-        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
+        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio3() de js/app.js.
                 Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
-        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio1() {
-  console.log("--- Ejercicio 1 · Variables y typeof ---");
+        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio3() {
+  console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
+
+  // Ejemplo: una expresión que mezcla tipos
+  //Muestro 6 expresiones que mezclan tipos:
+  console.log('"5" - 2 →', "5" - 2);   // espero 3
+  console.log('20 - "20"→', 20 - "20"); //espero 0
+  console.log('null + 1 →', null + 1);  // espero 1
+  console.log('"true" - 1 →', "true" - 1);   // espero NaN
+  console.log('"5" != 5 →', "5" != 5);  //Espero true
+  console.log('5+ "4" →', 5 + "4");   // espero "54"
+
+  // Ejemplo: la misma pareja comparada con == y con ===
+  console.log('5 == "5" →', 5 == "5");     // espero [tu predicción]
+  console.log('5 === "5" →', 5 === "5");   // espero [tu predicción]
+  consule.log('0 == false →', 0 == false);   // espero [tu predicción]
+  console.log('0 === false →', 0 === false);   // espero [tu predicción]
+  console.log('null == undefined →', null == undefined);   // espero [tu predicción]
+  console.log('null === undefined →', null === undefined);   // espero [tu predicción]
 
 
 }</code></pre>
@@ -221,15 +238,24 @@
         <div class="table-responsive">
           <table class="table table-sm table-striped align-middle mb-2">
             <thead class="table-primary">
-              <tr><th scope="col">Variable</th><th scope="col">Valor</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
+              <tr><th scope="col">Expresion</th><th scope="col">Espero</th><th scope="col">Sale</th><th scope="col">Manda</th></tr>
             </thead>
             <tbody>
-              <tr><th scope="row">edad</th><td><code>20</code></td><td><code>number</code></td><td><code>number</code></td></tr>
-              <tr><th scope="row">nombre</th><td><code>jorge</code></td><td><code>string</code></td><td><code>string</code></td></tr>
-              <tr><th scope="row">booleano</th><td><code>true</code></td><td><code>boolean</code></td><td><code>boolean</code></td></tr>
-              <tr><th scope="row">nulo</th><td><code>null</code></td><td><code>null</code></td><td><code>object</code></td></tr>
-              <tr><th scope="row">indefinido</th><td><code>undefined</code></td><td><code>undefined</code></td><td><code>undefined</code></td></tr>
-              <tr><th scope="row">numeroGrande</th><td><code>10n</code></td><td><code>bigint</code></td><td><code>bigint</code></td></tr>
+              <tr><th scope="row">"5" - 2</th><td><code>3</code></td><td><code>3</code></td><td><code>numero</code></tr>
+              <tr><th scope="row">20 - "20"</th><td><code>0</code></td><td><code>0</code></td><td><code>numero</code></td></tr>
+              <tr><th scope="row">null + 1</th><td><code>1</code></td><td><code>1</code></td><td><code>numero</code></td></tr>
+              <tr><th scope="row">"true" - 1</th><td><code>NaN</code></td><td><code>NaN</code></td><td><code>numero</code></td></tr>
+              <tr><th scope="row">"5" != 5</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></td></tr>
+              <tr><th scope="row">5 + "4"</th><td><code>"54"</code></td><td><code>"54"</code></td><td><code>cadena</code></td></tr>
+              <tr><th scope="row">5 + "4"</th><td><code>"54"</code></td><td><code>"54"</code></td><td><code>cadena</code></td></tr>
+              
+              <tr><th scope="row">5 == "5"</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></tr>
+              <tr><th scope="row">5 === "5"</th><td><code>false</code></td><td><code>false</code></td><td><code>cadena</code></tr>
+              <tr><th scope="row">0 == false</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></tr>
+              <tr><th scope="row">0 === false</th><td><code>false</code></td><td><code>false</code></td><td><code>cadena</code></tr>
+              <tr><th scope="row">null == undefined</th><td><code>true</code></td><td><code>true</code></td><td><code>cadena</code></tr>
+              <tr><th scope="row">null === undefined</th><td><code>false</code></td><td><code>false</code></td><td><code>cadena</code></tr>
+
             </tbody>
           </table>
         </div>
@@ -241,8 +267,8 @@
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
               Cómo funciona lo veremos más adelante, con los eventos. De momento, cópialo tal cual y cambia solo el número. -->
       <div class="card-footer">
-        <button type="button" class="btn btn-primary" onclick="ejercicio1()">
-          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 1
+        <button type="button" class="btn btn-primary" onclick="ejercicio3()">
+          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 3
         </button>
         <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
       </div>

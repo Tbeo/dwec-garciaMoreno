@@ -81,20 +81,21 @@ function ejercicio3() {
 
   // Ejemplo: una expresión que mezcla tipos
   //Muestro 6 expresiones que mezclan tipos:
-  console.log('"5" - 2 →', "5" - 2);   // espero 
-  console.log('20 + "20"→', 20 + "20");
-  console.log('null + 1 →', null + 1);
-
-  console.log('"true" - 1 →', "true" - 1);   // espero [tu predicción]
-  console.log('"5" != 5 →', "5" != 5);
-
-
-  // TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
+  console.log('"5" - 2 →', "5" - 2);   // espero 3
+  console.log('20 - "20"→', 20 - "20"); //espero 0
+  console.log('null + 1 →', null + 1);  // espero 1
+  console.log('"true" - 1 →', "true" - 1);   // espero NaN
+  console.log('"5" != 5 →', "5" != 5);  //Espero true
+  console.log('5+ "4" →', 5 + "4");   // espero "54"
 
   // Ejemplo: la misma pareja comparada con == y con ===
   console.log('5 == "5" →', 5 == "5");     // espero [tu predicción]
   console.log('5 === "5" →', 5 === "5");   // espero [tu predicción]
-  consule.log
+  console.log('0 == false →', 0 == false);   // espero [tu predicción]
+  console.log('0 === false →', 0 === false);   // espero [tu predicción]
+  console.log('null == undefined →', null == undefined);   // espero [tu predicción]
+  console.log('null === undefined →', null === undefined);   // espero [tu predicción]
+
 
   // TODO: haz lo mismo con 0 y false, y con null y undefined.
 }
