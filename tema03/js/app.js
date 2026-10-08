@@ -106,16 +106,22 @@ function ejercicio4() {
   console.log("--- Ejercicio 4 · Tu ficha con plantillas de cadena ---");
 
   // Tus datos, con const
-  const nombre = "[Tu nombre]";
+  const nombre = "Jorge Garcia Moreno";
+  const ciclo = "2026-2027";
+  const curso = "2º, Desarrollo de Entorno Cliente";
+  const aficion = "Jugar videojuegos";
+  let horasEstudio = 10; // ejemplo de dato que cambia
+  horasEstudio += 5;
   // TODO: ciclo, curso y una afición, también con const.
 
   // Un dato que cambia, con let
   // TODO: por ejemplo, las horas que has estudiado esta semana. Después súmale algo con +=.
 
   // La ficha con plantilla de cadena: backticks (`) y ${ }
-  const ficha = `Soy ${nombre}.`;
+  const ficha = `Soy ${nombre}, estudio ${curso} durante los años ${ciclo}, he estudiado ${horasEstudio} horas a la semana y me gusta ${aficion}.`;
   // TODO: completa la ficha con todos tus datos y muéstrala con alert() y en la consola.
-
+  console.log(ficha);
+  alert(ficha);
   // TODO: escribe la misma ficha concatenando con + en una constante fichaConMas y muéstrala en la consola.
   // TODO: compara las dos con === y muestra el resultado en la consola: tiene que salir true.
 
