@@ -65,7 +65,17 @@
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
 
-  [aquí va el resto de tu código]
+  let nombre = "jorge";     //String 
+  console.log("nombre =", nombre, "→", typeof nombre);
+  const booleano = true;   // boolean
+  console.log("booleano =", booleano, "→", typeof booleano);
+  const nulo = null;   // object
+  console.log("nulo =", nulo, "→", typeof nulo);
+  const indefinido = undefined;   // undefined
+  console.log("indefinido =", indefinido, "→", typeof indefinido);
+  const numeroGrande = 10n;   // bigint
+  console.log("numeroGrande =", numeroGrande, "→", typeof numeroGrande);
+
 }</code></pre>
 
         <!-- 3) La tabla «Espero / Sale», rellenada a mano.
@@ -78,13 +88,17 @@
             </thead>
             <tbody>
               <tr><th scope="row">edad</th><td><code>20</code></td><td><code>number</code></td><td><code>number</code></td></tr>
-              <tr><th scope="row">[variable]</th><td><code>[valor]</code></td><td><code>[lo que esperas]</code></td><td><code>[lo que sale]</code></td></tr>
+              <tr><th scope="row">nombre</th><td><code>jorge</code></td><td><code>string</code></td><td><code>string</code></td></tr>
+              <tr><th scope="row">booleano</th><td><code>true</code></td><td><code>boolean</code></td><td><code>boolean</code></td></tr>
+              <tr><th scope="row">nulo</th><td><code>null</code></td><td><code>null</code></td><td><code>object</code></td></tr>
+              <tr><th scope="row">indefinido</th><td><code>undefined</code></td><td><code>undefined</code></td><td><code>undefined</code></td></tr>
+              <tr><th scope="row">numeroGrande</th><td><code>10n</code></td><td><code>bigint</code></td><td><code>bigint</code></td></tr>
             </tbody>
           </table>
         </div>
 
         <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> [explica en una línea qué pasa con typeof null]</p>
+        <p class="small mb-0"><strong>El caso de null:</strong> aparece como object y no como null como tal ya que es un error del lenguaje que nunca se arregló</p>
       </div>
 
       <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.

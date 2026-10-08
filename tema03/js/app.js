@@ -20,10 +20,16 @@ function ejercicio1() {
   const edad = 20;   // number
   console.log("edad =", edad, "→", typeof edad);
 
-  const nombre = "jorge";     //String 
-  const booleaneano = false;  //Booleano
-  const Null = null;          //Nulo
-  let undefined ;
+  let nombre = "jorge";     //String 
+  console.log("nombre =", nombre, "→", typeof nombre);
+  const booleano = true;   // boolean
+  console.log("booleano =", booleano, "→", typeof booleano);
+  const nulo = null;   // object
+  console.log("nulo =", nulo, "→", typeof nulo);
+  const indefinido = undefined;   // undefined
+  console.log("indefinido =", indefinido, "→", typeof indefinido);
+  const numeroGrande = 10n;   // bigint
+  console.log("numeroGrande =", numeroGrande, "→", typeof numeroGrande);
 
   // TODO: declara una variable de cada tipo que falta: string, boolean, null, undefined y bigint (como 10n).
   //       const si no va a cambiar; let para al menos una a la que des valor más tarde.
@@ -40,6 +46,9 @@ function ejercicio2() {
   // Ejemplo: una conversión, tu predicción y el resultado con su tipo
   const a = String(123);   // espero [tu predicción]
   console.log("String(123) →", a, typeof a);
+
+  const b = Number("123");   // espero [tu predicción]
+  console.log('Number("123") →', b, typeof b);
 
   // TODO: el resto de conversiones obligatorias, cada una con su «espero …»:
   //       Number("123"), Number("12abc"), Number(""), Number(true),
