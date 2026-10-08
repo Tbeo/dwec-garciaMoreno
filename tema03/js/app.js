@@ -44,11 +44,29 @@ function ejercicio2() {
   console.log("--- Ejercicio 2 · Conversiones explícitas ---");
 
   // Ejemplo: una conversión, tu predicción y el resultado con su tipo
-  const a = String(123);   // espero [tu predicción]
+  const a = String(123);   // espero "123" y "string"
   console.log("String(123) →", a, typeof a);
 
-  const b = Number("123");   // espero [tu predicción]
+  const b = Number("123");   // espero 123 y "number"
   console.log('Number("123") →', b, typeof b);
+
+  const c = Number("12abc");   // espero NaN y "number"
+  console.log('Number("12abc") →', c, typeof c);
+
+  const d = Number("");   // espero  y "number"
+  console.log('Number("") →', d, typeof d);
+
+  const e = Number(true);   // espero 1 y "number"
+  console.log('Number(true) →', e, typeof e);
+
+  const f = Boolean(0);   // espero false y "boolean"
+  console.log('Boolean(0) →', f, typeof f);
+
+  const g = Boolean("texto");   // espero true y "boolean"
+  console.log('Boolean("texto") →', g, typeof g);
+
+  const h = Boolean("");   // espero false y "boolean"
+  console.log('Boolean("") →', h, typeof h);
 
   // TODO: el resto de conversiones obligatorias, cada una con su «espero …»:
   //       Number("123"), Number("12abc"), Number(""), Number(true),
@@ -62,13 +80,21 @@ function ejercicio3() {
   console.log("--- Ejercicio 3 · Coerción y comparaciones ---");
 
   // Ejemplo: una expresión que mezcla tipos
-  console.log('"5" - 2 →', "5" - 2);   // espero [tu predicción]
+  //Muestro 6 expresiones que mezclan tipos:
+  console.log('"5" - 2 →', "5" - 2);   // espero 
+  console.log('20 + "20"→', 20 + "20");
+  console.log('null + 1 →', null + 1);
+
+  console.log('"true" - 1 →', "true" - 1);   // espero [tu predicción]
+  console.log('"5" != 5 →', "5" != 5);
+
 
   // TODO: cinco expresiones más que mezclen tipos (al menos dos inventadas por ti), cada una con su «espero …».
 
   // Ejemplo: la misma pareja comparada con == y con ===
   console.log('5 == "5" →', 5 == "5");     // espero [tu predicción]
   console.log('5 === "5" →', 5 === "5");   // espero [tu predicción]
+  consule.log
 
   // TODO: haz lo mismo con 0 y false, y con null y undefined.
 }
