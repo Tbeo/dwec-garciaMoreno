@@ -1,125 +1,57 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Cambia [Tu nombre] por tu nombre -->
-  <title>Variables, tipos y conversiones · [Tu nombre]</title>
+# Tarea 3 · Variables, tipos y conversiones
 
-  <!-- CSS de Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Iconos de Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
-</head>
-<body>
+**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-  <!--
-    PLANTILLA DE LA TAREA 3
-    · Todo lo que va entre [corchetes] es un hueco: sustitúyelo por lo tuyo.
-    · La card del ejercicio 1 es el modelo. Las de los ejercicios 2, 3 y 4 las haces tú copiándola (mira el final).
-    · El JavaScript va en js/app.js, dentro de la función de cada ejercicio.
-  -->
+> **Plantilla de la tarea 3.** Cómo usarla:
+>
+> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema03`.
+> 2. `index.html` trae la card del ejercicio 1 como modelo: cópiala para los ejercicios 2, 3 y 4.
+> 3. `js/app.js` trae una función por ejercicio: escribe tu código donde pone `TODO`.
+> 4. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
+> 5. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
 
-  <!-- NAVBAR con tu nombre -->
-  <nav class="navbar bg-primary" data-bs-theme="dark">
-    <div class="container">
-      <span class="navbar-brand"><i class="bi bi-person-circle"></i> [Tu nombre y apellidos]</span>
-      <span class="navbar-text">Tarea 3 · DWEC</span>
-    </div>
-  </nav>
+[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live**, abrir la consola con F12 y pulsar «Ejecutar» en cada ejercicio.]
 
-  <!-- CABECERA -->
-  <header class="bg-body-tertiary border-bottom py-4 mb-4">
-    <div class="container">
-      <h1 class="h2 mb-1">Variables, tipos y conversiones</h1>
-      <p class="lead mb-2 text-body-secondary">
-        Cuaderno de laboratorio: para cada ejercicio, el código, lo que esperaba y lo que salió de verdad.
-      </p>
-      <p class="mb-0 small">
-        Abre la consola con <kbd>F12</kbd> y pulsa «Ejecutar» en cada ejercicio.
-        <span class="badge text-bg-danger">Fallé</span> marca las predicciones en las que me equivoqué.
-      </p>
-    </div>
-  </header>
+## Capturas
 
-  <main class="container mb-5">
+### a) La página entera
 
-    <!-- ============================================================
-         EJERCICIO 1 · La card modelo
-         ============================================================ -->
-    <section class="card mb-4 shadow-sm">
+<img src="capturas/a-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
-      <!-- 1) Título del ejercicio -->
-      <div class="card-header d-flex align-items-center gap-2">
-        <span class="badge text-bg-primary">Ejercicio 1</span>
-        <h2 class="h5 mb-0">Variables y typeof</h2>
-      </div>
+[Qué se ve: tu nombre en la navbar, las cuatro cards y los fallos de predicción marcados.]
 
-      <div class="card-body">
+### b) Consola del ejercicio 1
 
-        <!-- 2) El código: cuando termines, copia aquí tu función ejercicio1() de js/app.js.
-                Si tu código lleva los signos < o >, escríbelos como &lt; y &gt; -->
-        <pre class="bg-dark text-light p-3 rounded small mb-4"><code>function ejercicio1() {
-  console.log("--- Ejercicio 1 · Variables y typeof ---");
+![Consola del ejercicio 1](capturas/b-consola-ej1.png)
 
-  const edad = 20;   // number
-  console.log("edad =", edad, "→", typeof edad);
+[Qué se ve, en una o dos líneas.]
 
-  [aquí va el resto de tu código]
-}</code></pre>
+### c) Consola del ejercicio 2
 
-        <!-- 3) La tabla «Espero / Sale», rellenada a mano.
-                Una fila por variable. Si te equivocas, añade en la columna «Sale» el badge:
-                <span class="badge text-bg-danger">Fallé</span> -->
-        <div class="table-responsive">
-          <table class="table table-sm table-striped align-middle mb-2">
-            <thead class="table-primary">
-              <tr><th scope="col">Variable</th><th scope="col">Valor</th><th scope="col">Espero</th><th scope="col">Sale</th></tr>
-            </thead>
-            <tbody>
-              <tr><th scope="row">edad</th><td><code>20</code></td><td><code>number</code></td><td><code>number</code></td></tr>
-              <tr><th scope="row">[variable]</th><td><code>[valor]</code></td><td><code>[lo que esperas]</code></td><td><code>[lo que sale]</code></td></tr>
-            </tbody>
-          </table>
-        </div>
+![Consola del ejercicio 2](capturas/c-consola-ej2.png)
 
-        <!-- 4) Tu explicación -->
-        <p class="small mb-0"><strong>El caso de null:</strong> [explica en una línea qué pasa con typeof null]</p>
-      </div>
+[Qué se ve, en una o dos líneas.]
 
-      <!-- 5) El botón. onclick="ejercicio1()" hace que, al pulsarlo, se ejecute la función ejercicio1() de js/app.js.
-              Cómo funciona lo veremos más adelante, con los eventos. De momento, cópialo tal cual y cambia solo el número. -->
-      <div class="card-footer">
-        <button type="button" class="btn btn-primary" onclick="ejercicio1()">
-          <i class="bi bi-play-fill"></i> Ejecutar ejercicio 1
-        </button>
-        <span class="small text-body-secondary ms-2">El resultado sale en la consola (F12).</span>
-      </div>
-    </section>
+### d) Consola del ejercicio 3
 
-    <!-- ============================================================
-         EJERCICIOS 2, 3 Y 4 · Los haces tú
-         Copia la card del ejercicio 1 entera (desde <section> hasta </section>), pégala aquí debajo
-         y cambia en cada copia:
-           · el número y el título;
-           · el código del bloque <pre><code>;
-           · las columnas de la tabla:
-               Ejercicio 2 → Conversión / Espero / Sale
-               Ejercicio 3 → Expresión / Espero / Sale, y tu frase sobre cuándo manda la cadena y cuándo el número
-               Ejercicio 4 → tu ficha, y el error de la const dentro de un <div class="alert alert-danger">
-           · el botón: onclick="ejercicio2()", onclick="ejercicio3()"…
-         ============================================================ -->
+![Consola del ejercicio 3](capturas/d-consola-ej3.png)
 
-  </main>
+[Qué se ve, en una o dos líneas.]
 
-  <footer class="bg-body-tertiary border-top py-3">
-    <div class="container small text-body-secondary">
-      [Tu nombre y apellidos] · DWEC 26/27 · Tarea 3 · Las capturas, la reflexión y las fuentes están en el README.
-    </div>
-  </footer>
+### e) Consola del ejercicio 4, con el error de la const
 
-  <!-- JS de Bootstrap y, después, tu JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/app.js"></script>
-</body>
-</html>
+![Consola del ejercicio 4 con el error de la const](capturas/e-consola-ej4.png)
+
+[Qué se ve, en una o dos líneas.]
+
+## Reflexión
+
+[De 5 a 8 líneas: ¿qué conversiones te resultaron más intuitivas y cuáles te sorprendieron? Pon ejemplos concretos de tus tablas.]
+
+## Fuentes
+
+- [Título de la página](https://enlace-a-la-fuente)
+
+## Uso de IA
+
+[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
