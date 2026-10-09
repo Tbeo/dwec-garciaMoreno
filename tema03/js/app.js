@@ -130,5 +130,5 @@ function ejercicio4() {
   console.log(ficha===fichaMas);
   // Recuerda: el error de dar otro valor a una const se provoca en la consola del navegador, no aquí.
   //Doy valor a ficha:
-  //ficha = "cambio su valor"; // Esto es lo que deberia de hacer en la consola
+  ficha = "cambio su valor"; // Esto es lo que deberia de hacer en la consola
 }
