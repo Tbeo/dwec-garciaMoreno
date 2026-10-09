@@ -14,25 +14,25 @@ En esta parte se puede observar en las 3 fotografías como se estructura el html
 
 ### b) Consola del ejercicio 1
 
-![Consola del ejercicio 1](capturas/b-consola-ej1.png)
+![Consola del ejercicio 1]<img src="capturas/b-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
 Se puede observar como se declaran variables y se inicializan a distintos valores, devolviendo con una flecha el tipo de dato de cada una
 
 ### c) Consola del ejercicio 2
 
-![Consola del ejercicio 2](capturas/c-consola-ej2.png)
+![Consola del ejercicio 2]<img src="capturas/c-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
 En este tipo de ejercicio se puede observar como se hace un casting o cambio de valor a ciertas variables, intentando asignar numeros a variables de tipo Number por ejemplo
 
 ### d) Consola del ejercicio 3
 
-![Consola del ejercicio 3](capturas/d-consola-ej3.png)
+![Consola del ejercicio 3]<img src="capturas/d-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
 En este tipo de ejercicio se intentan realizar operaciones básicas con distintos tipos de variables, se puede observar como se intentan concatenar strings y numéros y se convierte todo a un string, por ejemplo
 
 ### e) Consola del ejercicio 4, con el error de la const
 
-![Consola del ejercicio 4 con el error de la const](capturas/e-consola-ej4.png)
+![Consola del ejercicio 4 con el error de la const]<img src="capturas/e-pagina.png" alt="La página entera con mi nombre en la navbar" width="600">
 
 Se puede ver el titulo del ejercicio y dos textos que corresponden a las dos variables creadas con la estructura que se ha especificado, con $ y backticks y la otra concatenando +. Ademas, cómo se puede capturar un error al intentar cambiar el valor a una variable de visibilidad const.
 
