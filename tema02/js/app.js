@@ -4,6 +4,10 @@ function saludar(){
     alert("Saludos, soy Jorge García Moreno");
 }
 
+function despedida(){
+    console.log("adios");
+}
+
 function simularError(){
     console.error("Boton error pulsado");        
 }
