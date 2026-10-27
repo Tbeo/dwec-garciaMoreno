@@ -94,6 +94,7 @@ function potencia() {
 
 function modulo() {
   // TODO: el resto de la división, con el operador %
+  //Prueba
   // TODO: si el número 2 es 0, muestra un error en rojo (5 % 0 da NaN).
 }
 
