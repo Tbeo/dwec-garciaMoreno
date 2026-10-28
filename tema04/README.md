@@ -48,6 +48,7 @@
 ## Reflexión
 
 [De 5 a 8 líneas: ¿en qué se diferencian for, while y do…while y cuándo usarías cada uno? Pon como ejemplo lo que pasó con el 0.]
+En ambos bucles tuve que crear dos variables, una para ir iterando y sumandose y otra para realmente contar el número de repeticiones, en el for y en el while no entran de primeras, ya que la comprobación se realiza antes de ejecutar esa parte del código mientras que en el bucle doWhile al realizarse primero la iteración, el contador de iteraciones se incrementa en 1 directamente.
 
 ## Fuentes
 

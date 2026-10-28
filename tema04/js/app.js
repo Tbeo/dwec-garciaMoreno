@@ -1,5 +1,5 @@
 /*
-  Tarea 4 · DWEC · [Tu nombre y apellidos]
+  Tarea 4 · DWEC · Jorge García Moreno
   Calculadora y bucles.
 
   Cómo usar esta plantilla:
@@ -139,7 +139,7 @@ function cualEsMayor() {
     else if(n1 === n2){
       resultado = n1;
       mensaje = "Ámbos números son iguales: " + resultado;
-      console.log(`Ámbos números son iguales: ${n1} y ${n2} es: ${resultado}`);
+      console.log(`Ámbos números son iguales: ${n1} y ${n2} el resultado es: ${resultado}`);
     }
     else{
       resultado = n2;
@@ -151,11 +151,22 @@ function cualEsMayor() {
 }
 
 function parOImpar() {
-  // TODO: solo con el número 1. Usa el operador % y el ternario ( condición ? "par" : "impar" ).
-  // TODO: si el número tiene decimales, avisa de que no es ni par ni impar.
+  const n1 = leerNumero("numero1");
+  if (Number.isNaN(n1)) {
+    mostrar("Escribe el número antes de ver si es par o impar", "danger");
+    console.warn("parOImpar: falta introducir el número");
+  }
+  //Compruebo si es decimal, para avisar si es par o impar
+  else if(n1%1 !== 0){
+    mostrar(`${n1} tiene decimales: no es ni par ni impar.`, "warning");
+    console.warn("parOImpar: El número es decimal, por lo que no es par ni impar");
+  }
+  else{
+    const ParImpar= n1 % 2 === 0 ? "par" : "impar";
+    mostrar(`${n1} es ${ParImpar}`);
+    console.log(`El número: ${n1} es: ${ParImpar}`);
+  }
 }
-
-
 // ============================================================
 // Ejercicio 3 · Bucles con texto
 // El número 1 dice cuántas veces se repite cada bucle
@@ -163,21 +174,67 @@ function parOImpar() {
 
 function bucleFor() {
   const veces = leerNumero("numero1");
+  let repeticiones = 0; //Variable para contar el numero de vueltas
   limpiarSalida();
-
-  // TODO: si el número falta, tiene decimales o pasa de MAXIMO_REPETICIONES, muestra un error en rojo.
-  // TODO: si no, repite con un for tantas veces como diga «veces». En cada vuelta:
-  //         anadirLinea(`for · repetición ${i} de ${veces}`);
-  //       y cuenta las vueltas en una variable contador.
-  // TODO: al terminar, añade una línea con el total: «Total: 5 repeticiones» o «Total: 1 repetición».
+  if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
+    mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
+    console.warn("bucleFor: falta alguna cosa");
+  }
+  //El bucle sumando 1 por cada iteracion
+  else{
+    for(let i=1;i<=veces;i++){
+      anadirLinea(`for · repetición ${i} de ${veces}`);
+      repeticiones++;
+    }
+    anadirLinea(`Total: ${repeticiones} repeticiones`);
+    console.log(`for: ${repeticiones} repeticiones`);
+  }
 }
 
 function bucleWhile() {
-  // TODO: lo mismo que bucleFor(), con un while.
+  const veces = leerNumero("numero1");
+  let repeticiones = 0; //Variable para contar el numero de vueltas, la empiezo en 1 por el bucle
+  let contador = 1
+  limpiarSalida();
+  if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
+    mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
+    console.warn("bucleWhile: falta alguna cosa");
+  }
+  //El bucle sumando 1 por cada iteracion
+  else{
+    while(contador<=veces){
+      anadirLinea(`While · repetición ${repeticiones} de ${veces}`);
+      repeticiones++;
+      contador++;
+    }
+
+    anadirLinea(`Total: ${repeticiones} repeticiones`);
+    console.log(`for: ${repeticiones} repeticiones`);
+  }
 }
 
 function bucleDoWhile() {
-  // TODO: lo mismo que bucleFor(), con un do…while. Pruébalo con 0 y con un negativo: ¿qué pasa?
+  const veces = leerNumero("numero1");
+  let repeticiones = 0; //Variable para contar el numero de vueltas, la empiezo en 0 por el bucle
+  let contador = 1;
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
+    mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
+    console.warn("bucleDoWhile: falta alguna cosa");
+  }
+  //El bucle sumando 1 por cada iteracion, en este realizo la operacion primero y luego la repito mientras se cumpla la condicion
+  else{
+    do{
+      anadirLinea(`Do While · repetición ${repeticiones} de ${veces}`);
+      repeticiones++;
+      contador++;
+    }
+    while(contador<=veces);
+
+    anadirLinea(`Total: ${repeticiones} repeticiones`);
+    console.log(`for: ${repeticiones} repeticiones`);
+  }
 }
 
 
@@ -186,15 +243,74 @@ function bucleDoWhile() {
 // ============================================================
 
 function badgesFor() {
-  // TODO: como bucleFor(), pero cada vuelta añade un badge con el número de la repetición:
-  //         anadirBadge(i, "primary");
-  // TODO: los pares, de un color y los impares, de otro. Elige el color con el operador ternario.
+  const veces = leerNumero("numero1");
+  let repeticiones = 0; //Variable para contar el numero de vueltas
+  limpiarSalida();
+  if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
+    mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
+    console.warn("bucleFor: falta alguna cosa");
+  }
+  //El bucle sumando 1 por cada iteracion
+  else{
+    for(let i=1;i<=veces;i++){
+      //Aqui añado el tipo de badge según si es par/impar
+      const color = i % 2 === 0 ? "primary" : "secondary";
+      anadirBadge(`${i}`, color);
+      repeticiones++;
+    }
+    anadirLinea(`Total: ${repeticiones} repeticiones`);
+    console.log(`for: ${repeticiones} repeticiones`);
+  }
 }
 
 function badgesWhile() {
-  // TODO: lo mismo que badgesFor(), con un while.
+  const veces = leerNumero("numero1");
+  let repeticiones = 0; //Variable para contar el numero de vueltas, la empiezo en 1 por el bucle
+  let contador = 1
+  limpiarSalida();
+  if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
+    mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
+    console.warn("bucleWhile: falta alguna cosa");
+  }
+  //El bucle sumando 1 por cada iteracion
+  else{
+    while(contador<=veces){
+      //anadirLinea(`While · repetición ${repeticiones} de ${veces}`);
+      const color = contador % 2 === 0 ? "primary" : "secondary";
+      anadirBadge(`${contador}`, color);
+      repeticiones++;
+      contador++;
+    }
+
+    anadirLinea(`Total: ${repeticiones} repeticiones`);
+    console.log(`for: ${repeticiones} repeticiones`);
+  }
 }
 
 function badgesDoWhile() {
-  // TODO: lo mismo que badgesFor(), con un do…while.
+  const veces = leerNumero("numero1");
+  let repeticiones = 0; //Variable para contar el numero de vueltas, la empiezo en 0 por el bucle
+  let contador = 1;
+  limpiarSalida();
+
+  if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
+    mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
+    console.warn("bucleDoWhile: falta alguna cosa");
+  }
+
+  //El bucle sumando 1 por cada iteracion, en este realizo la operacion primero y luego la repito mientras se cumpla la condicion
+  else{
+    do{
+      //anadirLinea(`Do While · repetición ${repeticiones} de ${veces}`);
+      const color = contador % 2 === 0 ? "primary" : "secondary";
+      anadirBadge(`${contador}`, color);
+      repeticiones++;
+      contador++;
+    }
+    while(contador<=veces);
+
+    anadirLinea(`Total: ${repeticiones} repeticiones`);
+    console.log(`for: ${repeticiones} repeticiones`);
+  }
+  
 }
