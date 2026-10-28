@@ -266,7 +266,7 @@ function badgesFor() {
 function badgesWhile() {
   const veces = leerNumero("numero1");
   let repeticiones = 0; //Variable para contar el numero de vueltas, la empiezo en 1 por el bucle
-  let contador = 1
+  let contador = 1;
   limpiarSalida();
   if (Number.isNaN(veces) || veces %1 !==0 || veces > MAXIMO_REPETICIONES) {
     mostrar("Fallo en alguna parte, escribeme un número que indique el número de veces a repetir, que no sea decimal y que sea menor a 20", "danger");
