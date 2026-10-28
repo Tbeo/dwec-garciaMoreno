@@ -118,10 +118,36 @@ function modulo() {
 
 // ============================================================
 // Ejercicio 2 · Comparaciones
-// ============================================================
+// ===================================gf=========================
 
 function cualEsMayor() {
-  // TODO: con if, else if y else, di cuál de los dos números es mayor o si son iguales.
+  const n1 = leerNumero("numero1");
+  const n2 = leerNumero("numero2");
+  let resultado;
+  let mensaje;
+
+  if (Number.isNaN(n1) || Number.isNaN(n2)) {
+    mostrar("Escribe los dos números antes de operar.", "danger");
+    console.warn("cualEsMayor: falta algún número");
+  }
+  else{
+    if(n1 > n2){
+      resultado = n1;
+      mensaje = "El múmero mayor es: " + resultado;
+      console.log(`El número mayor entre: ${n1} y ${n2} es: ${resultado}`);
+    }
+    else if(n1 === n2){
+      resultado = n1;
+      mensaje = "Ámbos números son iguales: " + resultado;
+      console.log(`Ámbos números son iguales: ${n1} y ${n2} es: ${resultado}`);
+    }
+    else{
+      resultado = n2;
+      mensaje = "El número mayor es: "+ resultado;
+      console.log(`El número mayor entre: ${n1} y ${n2} es: ${resultado}`);
+    }
+    mostrar(`${mensaje}`);
+  }
 }
 
 function parOImpar() {
