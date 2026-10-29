@@ -43,8 +43,7 @@ El bucle for se diferencia del while y del do...while en que utiliza desde el pr
 
 ## Fuentes
 
-- [Título de la página](https://enlace-a-la-fuente)
+- Documentación de Bootstrap(https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 
 ## Uso de IA
-
-[Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He usado claude (Opus 5.5) de forma general para la realización de la práctica. La he usado hora de saber si me faltaban algunas partes, cuando me he quedado parado sin conocer cómo puedo ordenar mi index.html mediante bootstrap y conocer si hay algunos apartados de la rúbica que me haya saltado y no haya visto.
