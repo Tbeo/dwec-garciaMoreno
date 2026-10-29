@@ -209,7 +209,7 @@ function bucleWhile() {
     }
 
     anadirLinea(`Total: ${repeticiones} repeticiones`);
-    console.log(`for: ${repeticiones} repeticiones`);
+    console.log(`While: ${repeticiones} repeticiones`);
   }
 }
 
@@ -233,7 +233,7 @@ function bucleDoWhile() {
     while(contador<=veces);
 
     anadirLinea(`Total: ${repeticiones} repeticiones`);
-    console.log(`for: ${repeticiones} repeticiones`);
+    console.log(`DoWhile: ${repeticiones} repeticiones`);
   }
 }
 
