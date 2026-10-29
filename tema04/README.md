@@ -2,7 +2,7 @@
 
 **Autor:** Jorge García Moreno · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live**, escribir dos números y pulsar los botones con la consola abierta (F12).]
+En esta carpera
 
 ## Capturas
 
@@ -15,6 +15,8 @@
 ### b) La página en el móvil
 
 <img src="capturas/b-movil.png" alt="La página en el modo móvil de las herramientas de desarrollo" width="300">
+<img src="capturas/b2-movil.png" alt="La página en el modo móvil de las herramientas de desarrollo" width="300">
+<img src="capturas/b3-movil.png" alt="La página en el modo móvil de las herramientas de desarrollo" width="300">
 
 [Qué cambia respecto a la pantalla grande.]
 
