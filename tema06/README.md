@@ -31,7 +31,7 @@
 
 ![La tabla de productos ordenada por precio](capturas/c-ej3-ordenado.png)
 
-[Cómo es tu función de comparación y por qué ordenas una copia.]
+Mi funcion de comparación realmente crea una copia de la lista de productos y la ordena mediante la función sort. Esta función ordena según una función anónima que defino, establece que dados dos elementos: a y b decido cuál va primero. Funciona dandole un valor numérico, negativo si "a" va el primero o positivo si "b" va el primero.
 
 ### d) Ejercicio 4: las notas y la media
 
