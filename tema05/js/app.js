@@ -26,10 +26,12 @@ function aplicarCambios() {
   primero.textContent = "Texto modificado por JavaScript";
 
   const segundo = document.querySelector(".segundo");
+  segundo.classList.add("bg-warning-subtle");
+  
+  const tercero = document.querySelectorAll("#contenido p");
+  tercero[2].classList.add("text-danger");
 
-  // TODO: el segundo párrafo, con querySelector y su clase (.segundo): resáltalo con la clase "bg-warning-subtle".
-  // TODO: el tercero, con querySelectorAll("#contenido p") y su posición en la lista: ponlo en rojo con "text-danger".
-  // TODO: un console.log() que diga que se han aplicado los cambios.
+  console.log("Se han aplicado los cambios de aplicarCambios()");
 }
 
 
@@ -42,6 +44,8 @@ function anadirParrafo() {
   // TODO: dale el texto «Párrafo nuevo N», donde N es el número de párrafos que habrá en #contenido
   //       (pista: document.querySelector("#contenido").children.length).
   // TODO: cuélgalo al final de #contenido con append().
+
+  
 }
 
 function eliminarUltimo() {
