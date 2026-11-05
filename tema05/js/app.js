@@ -45,7 +45,12 @@ function anadirParrafo() {
   //       (pista: document.querySelector("#contenido").children.length).
   // TODO: cuélgalo al final de #contenido con append().
 
-  
+  const contenido = document.querySelector("#contenido");
+  const nuevo = document.createElement("p");
+  nuevo.textContent="Párrafo nuevo " + document.querySelector("#contenido").children.length;
+  contenido.append();
+
+
 }
 
 function eliminarUltimo() {
