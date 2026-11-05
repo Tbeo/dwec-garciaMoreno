@@ -371,19 +371,99 @@ const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 function verDobles() {
   // TODO: con map(), un array nuevo con el doble de cada número.
   // TODO: escribe en #salida5 el resultado y, debajo, numeros (para que se vea que no ha cambiado).
+  const dobles = numeros.map(function (n){
+    return n*2;
+  });
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "";
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "map: " + comoTexto(dobles);
+  salida.append(linea1);
+
+  const linea2 = document.createElement ("div");
+  linea2.textContent = "numeros sigue igual: " + comoTexto(numeros);
+  salida.append(linea2);
+
+  console.log("se ha ejecutado verDobles()");
 }
 
 function verPares() {
   // TODO: con filter(), los números pares (n % 2 === 0). Escríbelos en #salida5 como en verDobles().
+  const pares = numeros.filter(function (n){
+    return n % 2 ===0;  //true si el resto es 0, por lo que es par
+  });
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "";
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "filter: " + comoTexto(pares);
+  salida.append(linea1);
+
+  const linea2 = document.createElement ("div");
+  linea2.textContent = "numeros sigue igual: " + comoTexto(numeros);
+  salida.append(linea2);
+
+  console.log("se ha ejecutado verPares()");
+
 }
 
 function verSuma() {
   // TODO: con reduce(), la suma de todos los números (empieza en 0). Escríbela en #salida5.
+  const suma = numeros.reduce(function (n){
+    return total + n; //total mas el numero que toca
+  }, 0);  //empieza en 0
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "";
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "reduce: " + suma;
+  salida.append(linea1);
+
+  const linea2 = document.createElement ("div");
+  linea2.textContent = "numeros sigue igual: " + comoTexto(numeros);
+  salida.append(linea2);
+
+  console.log("se ha ejecutado verSuma()");
+
 }
 
 function verCadena() {
   // TODO: los tres seguidos: los pares, después sus dobles y al final la suma de esos dobles.
   //       Escribe en #salida5 una línea por paso.
+
+  const pares = numeros.filter(function (n){
+    return n%2 === 0;
+  });
+
+  const dobles = numeros.map(function (n){
+    return n*2;
+  });
+
+  const suma = numeros.reduce(function (n){
+    return total + n; //total mas el numero que toca
+  }, 0);  //empieza en 0
+
+  const salida = document.querySelector("#salida5");
+  salida.textContent = "";
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "filter: " + comoTexto(pares);
+  salida.append(linea1);
+
+  const linea2 = document.createElement ("div");
+  linea2.textContent = "map: " + comoTexto(dobles);
+  salida.append(linea2);
+
+  const linea3 = document.createElement ("div");
+  linea2.textContent = "la suma es: " + suma;
+  salida.append(linea3);
+
+  console.log("se ha ejecutado verCadena()");
+
 }
 
 
