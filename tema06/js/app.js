@@ -121,18 +121,36 @@ function anadirColor() {
 
   colores.push(color);   // push añade al final
   casilla.value = "";
-  document.querySelector("#aviso2").classList.add("d-none");
   mostrarColores();
   console.log("Ejercicio 2: push →", comoTexto(colores));
 }
 
 function quitarUltimo() {
-  // TODO: si la lista está vacía, avisa con avisar2() y no hagas nada más.
-  // TODO: si no, saca el último con pop(), vuelve a pintar la lista y di en la consola qué color ha salido.
+  let mensaje = "";
+  if (colores.length === 0) {
+    mensaje = "La lista esta vacia";
+    avisar2(mensaje);
+    return;
+  }
+  else {
+    const color = colores.pop();  //saco el ultimo elemento del array y lo devuelvo
+    mostrarColores();
+    console.log("El color que ha salido es: " + color);
+  }
+
 }
 
 function quitarPrimero() {
-  // TODO: lo mismo que quitarUltimo(), pero sacando el primero con shift().
+  let mensaje;
+  if (colores.length === 0) {
+    mensaje = "La lista esta vacia";
+    avisar2(mensaje);
+  }
+  else {
+    const color = colores.shift();  //elimino el primer elemento del array y lo devuelvo.
+    mostrarColores();
+    console.log("El color que ha salido es: " + color);
+  }
 }
 
 mostrarColores();   // pinta los tres colores de partida nada más cargar
