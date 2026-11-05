@@ -33,7 +33,7 @@ function comoTexto(lista) {
 
 const estudiante = { nombre: "Jorge", apellidos: "García Moreno", edad: 29, curso: "DWEC",
 
-  presentarse: function() { //funcion que se declara asi por ser una propiedad de la clase
+  presentarse: function() { //funcion que se declara asi por ser una propiedad del objeto
     return "Soy " + this.nombre + " " + this.apellidos + ", tengo " + this.edad + " años y estudio " + this.curso + ".";
   }
 };
@@ -75,8 +75,6 @@ function quitarCurso() {
   delete estudiante.curso;
   console.log("Se ha utilizado quitarCurso()");
   verFicha();
-  // TODO: borra la propiedad curso con delete y vuelve a pintar la ficha.
-  //       Fíjate en lo que sale ahora en el curso y explícalo en el README.
 }
 
 
@@ -226,10 +224,6 @@ function filtrarCaros() {
 }
 
 function buscarProducto() {
-  // TODO: lee #buscarProducto (value, trim y toLowerCase). Si está vacío, avisa en #mensaje3.
-  // TODO: con find(), el primer producto cuyo nombre en minúsculas contenga ese texto (includes).
-  // TODO: find devuelve undefined si no encuentra nada: en ese caso, dilo en #mensaje3 y vacía la tabla.
-  //       Si lo encuentra, píntalo solo a él: pintarProductos([encontrado]).
   const texto = document.querySelector("#buscarProducto").value.trim().toLowerCase();
   if (texto ===""){
     document.querySelector("#mensaje3").textContent = "buscarProducto esta vacio";
@@ -285,9 +279,6 @@ const alumno = {
 };
 
 function mostrarNotas() {
-  // TODO: vacía #notas y pon un badge (<span class="badge">) por nota: verde (text-bg-success) si es de 5 o más,
-  //       rojo (text-bg-danger) si no.
-  // TODO: en #media, «Media de N notas: X» con dos decimales (toFixed(2)), o «Todavía no hay notas.».
 
   const contenedor = document.querySelector("#notas");
   contenedor.textContent = "";  //contenedor donde van a estar las notas
@@ -318,18 +309,13 @@ function mostrarNotas() {
 }
 
 function anadirNota() {
-  // TODO: si #nota está vacía, muestra un error en #error4 (quítale "d-none").
-  //       Ojo: Number("") vale 0, así que esta comprobación va antes de convertir.
-  // TODO: convierte el valor con Number() y llama a alumno.anadirNota(). Si devuelve false, muestra el error.
-  // TODO: si ha ido bien, oculta el error, vacía la casilla y llama a mostrarNotas().
-
   const casilla = document.querySelector("#nota");
   const error = document.querySelector("#error4");
 
   //casilla vacia
   if(casilla.value.trim()===""){
     error.textContent="Escribe la nota antes de poder añadirla";
-    error.classList.remove("d-none"); //tengo que mostrar el error sino al añadirlo despues de fallar sigue el mensaje
+    error.classList.remove("d-none"); //muestro el error
     return;
   }
 
@@ -352,7 +338,6 @@ function anadirNota() {
 }
 
 function borrarNotas() {
-  // TODO: deja alumno.notas vacío y vuelve a pintar.
   alumno.notas = [];
   mostrarNotas();
   
@@ -369,8 +354,6 @@ mostrarNotas();
 const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function verDobles() {
-  // TODO: con map(), un array nuevo con el doble de cada número.
-  // TODO: escribe en #salida5 el resultado y, debajo, numeros (para que se vea que no ha cambiado).
   const dobles = numeros.map(function (n){
     return n*2;
   });
@@ -390,7 +373,6 @@ function verDobles() {
 }
 
 function verPares() {
-  // TODO: con filter(), los números pares (n % 2 === 0). Escríbelos en #salida5 como en verDobles().
   const pares = numeros.filter(function (n){
     return n % 2 ===0;  //true si el resto es 0, por lo que es par
   });
@@ -399,7 +381,7 @@ function verPares() {
   salida.textContent = "";
 
   const linea1 = document.createElement("div");
-  linea1.textContent = "filter: " + comoTexto(pares);
+  linea1.textContent = "los pares son: " + comoTexto(pares);
   salida.append(linea1);
 
   const linea2 = document.createElement ("div");
@@ -411,8 +393,7 @@ function verPares() {
 }
 
 function verSuma() {
-  // TODO: con reduce(), la suma de todos los números (empieza en 0). Escríbela en #salida5.
-  const suma = numeros.reduce(function (n){
+  const suma = numeros.reduce(function (total, n){
     return total + n; //total mas el numero que toca
   }, 0);  //empieza en 0
 
@@ -432,18 +413,19 @@ function verSuma() {
 }
 
 function verCadena() {
-  // TODO: los tres seguidos: los pares, después sus dobles y al final la suma de esos dobles.
-  //       Escribe en #salida5 una línea por paso.
 
+  //Primero los pares
   const pares = numeros.filter(function (n){
     return n%2 === 0;
   });
 
-  const dobles = numeros.map(function (n){
+  //Luego el doble de los pares
+  const dobles = pares.map(function (n){
     return n*2;
   });
 
-  const suma = numeros.reduce(function (n){
+  //tercero sumo los dobles
+  const suma = dobles.reduce(function (total, n){
     return total + n; //total mas el numero que toca
   }, 0);  //empieza en 0
 
@@ -451,7 +433,7 @@ function verCadena() {
   salida.textContent = "";
 
   const linea1 = document.createElement("div");
-  linea1.textContent = "filter: " + comoTexto(pares);
+  linea1.textContent = "los pares son: " + comoTexto(pares);
   salida.append(linea1);
 
   const linea2 = document.createElement ("div");
@@ -459,7 +441,7 @@ function verCadena() {
   salida.append(linea2);
 
   const linea3 = document.createElement ("div");
-  linea2.textContent = "la suma es: " + suma;
+  linea3.textContent = "la suma es: " + suma;
   salida.append(linea3);
 
   console.log("se ha ejecutado verCadena()");
