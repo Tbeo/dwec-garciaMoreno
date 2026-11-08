@@ -43,6 +43,7 @@ function pintarLista(selector, textos) {
 //       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
 //       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
 function calcularPrecio(base, iva, descuento) {
+  const precioFinal;
 
 }
 
