@@ -65,7 +65,48 @@ function mostrarPrecio() {
   //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
   // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
   //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+  const base = document.querySelector("#base").value;
+  const baseNumero = Number(base);
+  const descuento = document.querySelector("#descuento").value;
+  const iva = Number(document.querySelector("#iva").value);
+  let resultado;
+
+  const error1 = document.querySelector("#error1");
+
+  //Si la base esta vacia o es 0, error1.
+  if(base === ""){
+    error1.textContent = "El precio base esta vacio, no tiene sentido";
+    error1.classList.remove("d-none");
+    return;
+  }
   
+  else if (baseNumero<0){
+    error1.textContent = "El precio base es menor que 0, no tiene sentido";
+    error1.classList.remove("d-none");
+    return;
+  }
+
+  else if(descuento === ""){
+    resultado = calcularPrecio(baseNumero,iva);
+  }
+  else if ( (Number(descuento) >=0) && (Number(descuento) <= 100) ){
+    resultado = calcularPrecio(baseNumero,iva,Number(descuento));
+  }
+  else{
+    error1.textContent = "El descuento no puede ser mayor que 100 ni menor que 0";
+    error1.classList.remove("d-none");
+    return;
+  }
+  error1.classList.add("d-none");
+  const lista = [
+    `Precio sin IVA: ${formatearEuros(baseNumero)}`,
+    `Descuento: ${Number(descuento)} %`,
+    `IVA: ${iva} %`,
+    `Precio final: ${formatearEuros(resultado)}`
+  ];
+  
+  pintarLista("#salida1",lista);
+
 }
 
 
