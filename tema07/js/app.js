@@ -59,12 +59,6 @@ function formatearEuros(cantidad) {
 }
 
 function mostrarPrecio() {
-  // TODO: lee #base, #iva y #descuento (value). El IVA conviértelo con Number().
-  // TODO: si la base está vacía o es negativa, error en #error1 (quítale "d-none") y no sigas.
-  // TODO: si el descuento está vacío, llama a calcularPrecio(base, iva), sin el tercer argumento, para que se
-  //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
-  // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
-  //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
   const base = document.querySelector("#base").value;
   const baseNumero = Number(base);
   const descuento = document.querySelector("#descuento").value;
@@ -73,7 +67,6 @@ function mostrarPrecio() {
 
   const error1 = document.querySelector("#error1");
 
-  //Si la base esta vacia o es 0, error1.
   if(base === ""){
     error1.textContent = "El precio base esta vacio, no tiene sentido";
     error1.classList.remove("d-none");
@@ -104,6 +97,8 @@ function mostrarPrecio() {
     `IVA: ${iva} %`,
     `Precio final: ${formatearEuros(resultado)}`
   ];
+
+  console.log("Ejercicio 1: precio final : ", resultado);
   
   pintarLista("#salida1",lista);
 
@@ -135,6 +130,7 @@ function verTitulos() {
   const titulos = peliculas.map(function (pelicula) {
     return pelicula.titulo;
   });
+  
   pintarLista("#salida2", titulos);
   document.querySelector("#mensaje2").textContent = `${titulos.length} títulos.`;
   console.log("Ejercicio 2: map →", titulos);
@@ -171,6 +167,9 @@ function buscarAntigua() {
   // TODO: el callback nuevo, ya con flecha: con find(), la primera película anterior a 1990.
   // TODO: find devuelve undefined si no hay ninguna: dilo en #mensaje2 y vacía la lista.
   //       Si la encuentra, píntala con pintarLista("#salida2", [comoTexto(antigua)]).
+  
+
+
 }
 
 
