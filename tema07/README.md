@@ -56,3 +56,4 @@
 ## Uso de IA
 
 [Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
+He utilizado Claude Code para que me haga un resumen del código proporcionado y para que me vaya ayudando cuando me he quedado atrancado en las tareas y para comprobar tras realizar cada ejercicio si me he saltado o me ha faltado alguna parte que no haya visto. Todo el código que he tenido que realizar, igualmente, ha sido escrito por mi mano.

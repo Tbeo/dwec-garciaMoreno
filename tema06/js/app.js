@@ -459,24 +459,100 @@ let ciudades = [...ciudadesOriginal];   // una copia: splice cambia ciudades y a
 function mostrarCiudades() {
   // TODO: vacía #ciudades y pon un badge por ciudad con su posición: «0 · Granada», «1 · Sevilla»...
   //       Pista: forEach le pasa a tu función dos datos: function (ciudad, posicion) { ... }.
+  const contenedor = document.querySelector("#ciudades");
+  contenedor.textContent = "";   // vacio antes de volver a pintar
+
+  ciudades.forEach(function (ciudad, posicion) {
+    const badge = document.createElement("span");
+    badge.classList.add("badge", "text-bg-light", "border", "me-1", "mb-1");
+    badge.textContent = posicion + " · " + ciudad;
+    contenedor.append(badge);
+  });
+
+  console.log("Ejercicio 6: ciudades", comoTexto(ciudades));
 }
 
 function verSlice() {
   // TODO: guarda ciudades.slice(2, 5) y escribe en #salida6 qué devuelve y cuántas ciudades siguen en el array.
+  const trozo = ciudades.slice(2, 5);   // desde la posición 2 hasta la 5, sin incluir la 5
+
+  const salida = document.querySelector("#salida6");
+  salida.textContent = "";
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "slice(2, 5) devuelve " + comoTexto(trozo);
+  salida.append(linea1);
+
+  const linea2 = document.createElement("div");
+  linea2.textContent = "ciudades sigue teniendo " + ciudades.length + " elementos: no ha cambiado";
+  salida.append(linea2);
+
+  console.log("Ejercicio 6: slice →", trozo, "ciudades:", ciudades);
+
 }
 
 function hacerSplice() {
   // TODO: si quedan menos de 3 ciudades, avisa en #salida6 de que hay que restaurar y no hagas nada más.
   // TODO: si no, ciudades.splice(2, 2): escribe en #salida6 qué devuelve y cuántas quedan, y vuelve a pintar.
+  const salida = document.querySelector("#salida6");
+  salida.textContent = "";
+
+  // Si quedan menos de 3, no hay posición 2 que cortar con sentido: avisamos y salimos
+  if (ciudades.length < 3) {
+    salida.textContent = "Quedan menos de 3 ciudades: pulsa «Restaurar».";
+    return;
+  }
+
+  const quitadas = ciudades.splice(2, 2);   // desde la posición 2, quita 2 elementos
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "splice(2, 2) devuelve " + comoTexto(quitadas);
+  salida.append(linea1);
+
+  const linea2 = document.createElement("div");
+  linea2.textContent = "ciudades ahora tiene " + ciudades.length + " elementos: sí ha cambiado";
+  salida.append(linea2);
+
+  mostrarCiudades();   // hay que volver a pintar porque el array ha cambiado
+  console.log("Ejercicio 6: splice →", quitadas, "ciudades:", ciudades);
+
 }
 
 function restaurarCiudades() {
   // TODO: vuelve a copiar ciudadesOriginal en ciudades y pinta.
+  ciudades = [...ciudadesOriginal];   // una copia nueva del original
+
+  const salida = document.querySelector("#salida6");
+  salida.textContent = "Ciudades restauradas: vuelve a haber " + ciudades.length + ".";
+
+  mostrarCiudades();
+  console.log("Ejercicio 6: restaurado", comoTexto(ciudades));
 }
 
 function buscarCiudad() {
   // TODO: lee #buscarCiudad (value y trim). Si está vacío, avisa.
   // TODO: escribe en #salida6 lo que dan includes() e indexOf() con ese nombre. Si no está, indexOf da -1.
+  const nombre = document.querySelector("#buscarCiudad").value.trim();
+  const salida = document.querySelector("#salida6");
+  salida.textContent = "";
+
+  if (nombre === "") {
+    salida.textContent = "Escribe el nombre de una ciudad antes de buscar.";
+    return;
+  }
+
+  const esta = ciudades.includes(nombre);     // true o false
+  const posicion = ciudades.indexOf(nombre);  // la posición, o -1 si no está
+
+  const linea1 = document.createElement("div");
+  linea1.textContent = "includes(\"" + nombre + "\") → " + esta;
+  salida.append(linea1);
+
+  const linea2 = document.createElement("div");
+  linea2.textContent = "indexOf(\"" + nombre + "\") → " + posicion;
+  salida.append(linea2);
+
+  console.log("Ejercicio 6: buscar", nombre, "includes:", esta, "indexOf:", posicion);
 }
 
 mostrarCiudades();

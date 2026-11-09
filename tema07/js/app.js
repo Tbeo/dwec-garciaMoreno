@@ -38,12 +38,18 @@ function pintarLista(selector, textos) {
 // Ejercicio 1 · Precio final
 // ============================================================
 
-// TODO: calcularPrecio(base, iva, descuento) devuelve el precio final con return. No lee ni pinta nada.
-//       iva vale 21 por defecto y descuento, 0 por defecto (parámetros por defecto).
-//       Primero se resta el descuento (un tanto por ciento de la base) y después se suma el IVA.
-//       Comprueba en la consola: calcularPrecio(100) tiene que dar 121.
-function calcularPrecio(base, iva, descuento) {
-  const precioFinal;
+function calcularPrecio(base, iva = 21, descuento = 0) {
+  const precioDescuento = base * (descuento / 100);
+  const precioRebajado = base - precioDescuento;
+  const precioIva = precioRebajado * (iva / 100);
+  const precioFinal = precioRebajado + precioIva;
+
+  console.log("Precio base: " + base);
+  console.log("IVA: " + iva + "%");
+  console.log("Descuento: " + descuento + "%");
+  console.log("Precio final: " + precioFinal);
+
+  return precioFinal;
 
 }
 
@@ -59,6 +65,7 @@ function mostrarPrecio() {
   //       use el valor por defecto. Si no, comprueba que está entre 0 y 100 y pásaselo.
   // TODO: oculta el error y pinta el desglose en #salida1 con pintarLista():
   //       «Precio sin IVA: …», «Descuento: … %», «IVA: … %» y «Precio final: …» (con formatearEuros).
+  
 }
 
 
