@@ -122,56 +122,56 @@ function comoTexto(pelicula) {
   return `${pelicula.titulo} (${pelicula.anio}) · ${pelicula.duracion} min`;
 }
 
-// Las cuatro funciones siguientes ya funcionan, pero sus callbacks están escritos con function, como en el tema 6.
-// TODO: pasa a flecha los cuatro callbacks (map, filter, sort y reduce). Si el cuerpo es solo una expresión,
-//       sin llaves ni return. Comprueba después que cada botón sigue dando lo mismo.
+//Si solo tiene una expresion no hacen falta las llaves ni el return.
+//Sino, se deben poner las llaves y devolver un return como tal como una funcion cualquiera.
 
-function verTitulos() {
-  const titulos = peliculas.map(function (pelicula) {
-    return pelicula.titulo;
-  });
-  
+function verTitulos(){
+  const titulos = peliculas.map((pelicula) => pelicula.titulo);
+
   pintarLista("#salida2", titulos);
   document.querySelector("#mensaje2").textContent = `${titulos.length} títulos.`;
   console.log("Ejercicio 2: map →", titulos);
 }
 
 function verLargas() {
-  const largas = peliculas.filter(function (pelicula) {
-    return pelicula.duracion > 120;
-  });
+  const largas = peliculas.filter((pelicula) => pelicula.duracion >120);
+
   pintarLista("#salida2", largas.map(comoTexto));   // comoTexto ya es una función: se pasa sin paréntesis
   document.querySelector("#mensaje2").textContent = `${largas.length} películas duran más de 2 horas.`;
   console.log("Ejercicio 2: filter →", largas);
 }
 
 function ordenarPorAnio() {
-  const ordenadas = [...peliculas].sort(function (a, b) {   // una copia: sort cambia el original
-    return a.anio - b.anio;
-  });
+  const ordenadas = [...peliculas].sort((a,b) => a.anio - b.anio);
+
   pintarLista("#salida2", ordenadas.map(comoTexto));
   document.querySelector("#mensaje2").textContent = "De la más antigua a la más reciente.";
   console.log("Ejercicio 2: sort →", ordenadas);
 }
 
 function verDuracionTotal() {
-  const minutos = peliculas.reduce(function (total, pelicula) {
-    return total + pelicula.duracion;
-  }, 0);
+  const minutos = peliculas.reduce((total,pelicula) => total + pelicula.duracion, 0);
+
   pintarLista("#salida2", [`${minutos} minutos de películas`]);
   document.querySelector("#mensaje2").textContent = "La suma de las seis duraciones.";
   console.log("Ejercicio 2: reduce →", minutos);
 }
 
 function buscarAntigua() {
-  // TODO: el callback nuevo, ya con flecha: con find(), la primera película anterior a 1990.
-  // TODO: find devuelve undefined si no hay ninguna: dilo en #mensaje2 y vacía la lista.
-  //       Si la encuentra, píntala con pintarLista("#salida2", [comoTexto(antigua)]).
-  
 
+  const antigua = peliculas.find((pelicula) => pelicula.anio < 1990);
+  
+  if(antigua === undefined){
+    document.querySelector("#mensaje2").textContent = "No hay ninguna";
+    pintarLista("#salida2",[]); //Tengo que pasarle un array vacio ya que la funcion recorre una lista al segundo argumento.
+  } else{
+    document.querySelector("#mensaje2").textContent = "Primera pelicula anterior a 1990";
+    pintarLista("#salida2", [comoTexto(antigua)]);
+  }
+
+  console.log("Ejercicio 2: find →", antigua);
 
 }
-
 
 // ============================================================
 // Ejercicio 3 · Tu propio callback
@@ -180,11 +180,12 @@ function buscarAntigua() {
 const numeros = [3, -1, 4, -1, 5, 9];
 document.querySelector("#numeros3").textContent = `const numeros = [${numeros.join(", ")}];`;
 
-// TODO: transformar(lista, operacion) hace a mano lo que hace map, sin usar map:
-//       recorre lista con for…of, llama a operacion con cada elemento, guarda lo que devuelve
-//       en un array nuevo y, al final, devuelve ese array.
 function transformar(lista, operacion) {
-
+  const nuevaLista = [];
+  for (const elemento of lista){
+    nuevaLista.push(operacion(elemento));
+  }
+  return nuevaLista;
 }
 
 // Ya está hecha: escribe en #salida3 tu resultado, el de map y numeros
@@ -213,11 +214,16 @@ function verDobles() {
 
 function verCuadrados() {
   // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
+  const resultado = transformar(numeros, (n) => n**2);
+  mostrar3("cuadrado", resultado, numeros.map((n) => n ** 2));
+  console.log("Ejercicio 3: cuadrado →", resultado);
 }
 
 function verAbsolutos() {
-  // TODO: como verDobles(), con el valor absoluto (Math.abs). Pista: Math.abs ya es una función,
-  //       así que se puede pasar tal cual, sin paréntesis.
+  // Math.abs ya es una función asi que se pasa sin paréntesis
+  const resultado = transformar(numeros, Math.abs);
+  mostrar3("absoluto", resultado, numeros.map(Math.abs));
+  console.log("Ejercicio 3: absolutos →", resultado);
 }
 
 
