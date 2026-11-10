@@ -231,11 +231,14 @@ function verAbsolutos() {
 // Ejercicio 4 · Dos contadores con closure
 // ============================================================
 
-// TODO: crearContador(paso) guarda una variable cuenta que empieza en 0 y DEVUELVE una función.
-//       Cada vez que se llama a esa función, suma paso a cuenta y devuelve el valor nuevo.
-//       paso vale 1 por defecto.
-function crearContador(paso) {
 
+function crearContador(paso = 1) {
+  let cuenta = 0;
+  
+  return function(){ //Closure, la funcion recuerda cuenta ( variable ) del sitio de donde nacio
+    cuenta += paso;
+    return cuenta;
+  };
 }
 
 const contarDeUno = crearContador();
@@ -249,7 +252,9 @@ function sumarUno() {
 }
 
 function sumarCinco() {
-  // TODO: lo mismo con contarDeCinco y #cuenta5.
+  const valor = contarDeCinco();
+  document.querySelector("#cuenta5").textContent = valor;
+  console.log("Ejercicio 4: de 5 en 5 →", valor);
 }
 
 
