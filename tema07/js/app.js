@@ -209,21 +209,21 @@ function mostrar3(nombre, resultado, conMap) {
 function verDobles() {
   const resultado = transformar(numeros, (n) => n * 2);
   mostrar3("dobles", resultado, numeros.map((n) => n * 2));
-  console.log("Ejercicio 3: dobles →", resultado);
+  console.log("Ejercicio 3: dobles ->", resultado);
 }
 
 function verCuadrados() {
   // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
   const resultado = transformar(numeros, (n) => n**2);
   mostrar3("cuadrado", resultado, numeros.map((n) => n ** 2));
-  console.log("Ejercicio 3: cuadrado →", resultado);
+  console.log("Ejercicio 3: cuadrado ->", resultado);
 }
 
 function verAbsolutos() {
   // Math.abs ya es una función asi que se pasa sin paréntesis
   const resultado = transformar(numeros, Math.abs);
   mostrar3("absoluto", resultado, numeros.map(Math.abs));
-  console.log("Ejercicio 3: absolutos →", resultado);
+  console.log("Ejercicio 3: absolutos ->", resultado);
 }
 
 
@@ -248,13 +248,13 @@ const contarDeCinco = crearContador(5);
 function sumarUno() {
   const valor = contarDeUno();
   document.querySelector("#cuenta1").textContent = valor;
-  console.log("Ejercicio 4: de 1 en 1 →", valor);
+  console.log("Ejercicio 4: de 1 en 1 ->", valor);
 }
 
 function sumarCinco() {
   const valor = contarDeCinco();
   document.querySelector("#cuenta5").textContent = valor;
-  console.log("Ejercicio 4: de 5 en 5 →", valor);
+  console.log("Ejercicio 4: de 5 en 5 ->", valor);
 }
 
 
@@ -403,11 +403,8 @@ function crearAlumno() {
   //pinto el alumno
   pintarAlumnos();
 
-  console.log("Ejercicio 5, añadir nuevo alumno →", alumno);
+  console.log("Ejercicio 5, añadir nuevo alumno ->", alumno);
 }
-  // TODO: si hay notas, sepáralas con split(",") y conviértelas con map((texto) => Number(texto.trim())).
-  //       Si alguna no es válida (some), error en #error5 y no sigas. Si todas lo son, añádelas con anadirNota().
-  // TODO: añade el alumno a alumnos, oculta el error, vacía las casillas y llama a pintarAlumnos().
 
 pintarAlumnos();
 
@@ -416,11 +413,14 @@ pintarAlumnos();
 // Ejercicio 6 · Fechas y textos
 // ============================================================
 
-// TODO: diasHasta(fecha) devuelve cuántos días faltan desde hoy hasta fecha (negativo si ya pasó).
-//       Pon hoy a medianoche (hoy.setHours(0, 0, 0, 0)), resta las fechas, divide entre los milisegundos
-//       de un día y redondea con Math.round: con el cambio de hora, la resta no siempre da un número entero.
 function diasHasta(fecha) {
+  const hoy = new Date();
+  hoy.setHours(0,0,0,0);  //Hoy a medianoche
 
+  const milisegundosDia = 1000 * 60 *60 * 24;
+  const dias =(fecha-hoy) / milisegundosDia;
+  //redondeo
+  return Math.round(dias);
 }
 
 function mostrarDias() {
@@ -436,24 +436,48 @@ function mostrarDias() {
   const [anio, mes, dia] = valor.split("-").map(Number);
   const fecha = new Date(anio, mes - 1, dia);
 
-  // TODO: con diasHasta(fecha), escribe en #salida6a «Faltan N días: será viernes, 25 de diciembre de 2026.»,
-  //       «Es hoy…» o «Fue hace N días…». El nombre de la fecha, con toLocaleDateString("es-ES", {…}).
+  const dias = diasHasta(fecha);
+  const nombreFecha = fecha.toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric"});
+
+  //si falta almenos un dia, pone Faltan ndias...
+  if (dias > 0) {
+    salida.textContent = `Faltan ${dias} días: será ${nombreFecha}.`;
+  } else if (dias === 0) {
+    salida.textContent = `Es hoy: ${nombreFecha}.`;
+  } else {
+    salida.textContent = `Fue hace ${Math.abs(dias)} días: fue ${nombreFecha}.`;
+  }
+
+  console.log("Ejercicio 6 funcion mostrarDias: -> ", dias);
 }
 
-// TODO: iniciales(nombreCompleto) devuelve las iniciales en mayúsculas: «lucía martín ortega» → «LMO».
-//       Encadena trim, split(" "), filter (para quitar las palabras vacías si hay espacios dobles),
-//       map (la primera letra de cada palabra, en mayúscula) y join("").
 function iniciales(nombreCompleto) {
-
+  const iniciales = nombreCompleto.trim().split(" ").filter( (palabra) => palabra !=="").map((palabra) => palabra.slice(0,1).toUpperCase()).join("");
+  return nombre;
 }
 
-// TODO: crearUsuario(nombreCompleto) devuelve las iniciales en minúsculas y tres cifras al azar, de 000 a 999:
-//       «lmo042». Pista: Math.random, Math.floor y padStart(3, "0").
 function crearUsuario(nombreCompleto) {
+  // random entre 0 y 999
+  const numero = Math.floor(Math.random() * 1000); 
+  //con padStart devuevo 3 cifras, metiendo ceros si es menor que 100
+  const cifras = String(numero).padStart(3, "0");
 
+  //se lo añado sacandole las iniciales usando la funcion de antes:
+  return iniciales(nombreCompleto).toLowerCase() + cifras;
 }
 
 function mostrarIniciales() {
-  // TODO: lee #nombre6. Si está vacío, avisa en #salida6b.
-  // TODO: si no, escribe en #salida6b «Iniciales: LMO · usuario: lmo042».
+
+  const iniciales = document.querySelector("#nombre6").value.trim();
+  const salida = document.querySelector("#salida6b");
+
+  if (nombre === "") {
+    salida.textContent = "Escribe un nombre completo.";
+    return;
+  }
+
+  const textoIniciales = iniciales(nombre);
+  const usuario = crearUsuario(nombre);
+  salida.textContent = `Iniciales: ${textoIniciales} · usuario: ${usuario}`;
+  console.log("ejercicio 6 muestro las iniciales del usuario: -> ", textoIniciales, "· usuario ->", usuario);
 }
