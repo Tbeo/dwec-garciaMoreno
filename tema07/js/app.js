@@ -269,22 +269,50 @@ class Alumno {
     this.notas = [];
   }
 
-  // TODO: anadirNota(nota): si la nota no es un número (Number.isNaN) o no está entre 0 y 10, devuelve false;
-  //       si es válida, la añade a this.notas y devuelve true.
-  // TODO: media(): 0 si no hay notas; si hay, la suma con reduce (con flecha) entre el número de notas.
-  // TODO: presentarse(): devuelve «Lucía Martín, de 2.º DAW».
-  //       Recuerda: en una clase, los métodos van sin function y sin comas entre ellos.
-}
+  // devuelvo true si la nota es valida
+  anadirNota(nota) {
+    if (Number.isNaN(nota) || nota < 0 || nota > 10) {
+      return false;
+    }
+    this.notas.push(nota);
+    return true;
+  }
+  // si el tamaño del array es 0, devuelvo 0, sino, hago el acumulativo de cada elemento del array empezando en 0 y lo divido entre el tamaño ( media )
+  media() {
+    if (this.notas.length === 0) {
+      return 0;
+    }
+    return this.notas.reduce((total, n) => total + n, 0) / this.notas.length;
+  }
 
+  //Simplemente devuelvo: Nombre, de Curso
+  presentarse() {
+    return `${this.nombre}, de ${this.curso}`;
+  }
+}
+//AlumnoFCT, clase que hereda de alumno y que tiene un atributo mas: empresa
+//Tambien tiene el metodo presentarse que primero ejecuta el del alumno y le añade en practicas en + atributo empresa
 class AlumnoFCT extends Alumno {
-  // TODO: constructor(nombre, curso, empresa): primero super(nombre, curso) y después guarda la empresa.
-  // TODO: presentarse(): la frase de Alumno (super.presentarse()) más «, en prácticas en TecnoSur».
+  constructor(nombre, curso, empresa) {
+    super(nombre, curso);   // primero el constructor de Alumno
+    this.empresa = empresa;
+  }
+
+  presentarse() {
+    return `${super.presentarse()}, en prácticas en ${this.empresa}`;
+  }
+
 }
 
 const alumnos = [];
 
-// TODO: cuando tengas las clases, crea aquí dos alumnos de partida y añádelos a alumnos con push:
-//       un Alumno con dos notas y un AlumnoFCT con otras dos.
+const alumno1 = new Alumno("Jorge", "2º DAW");
+alumno1.anadirNota(8);
+alumno1.anadirNota(9);
+
+const alumno2 = new AlumnoFCT("Juan", "2º DAW", Anthropic);
+alumno2.anadirNota(7);
+alumno2.anadirNota(10);
 
 // Ya está hecha: pinta una tarjeta por alumno en #listaAlumnos y actualiza #totalAlumnos
 function pintarAlumnos() {
@@ -329,12 +357,57 @@ function pintarAlumnos() {
 }
 
 function crearAlumno() {
-  // TODO: lee #nombre5, #curso5, #empresa5 y #notas5 (value y trim). Si el nombre está vacío, error en #error5.
-  // TODO: si la empresa está vacía, crea un Alumno con new; si no, un AlumnoFCT.
+  const nombre = document.querySelector("#nombre5").value.trim();
+  const curso = document.querySelector("#curso5").value;
+  const empresa = document.querySelector("#empresa5").value.trim();
+  const textoNotas = document.querySelector("#notas5").value.trim();
+  const error = document.querySelector("#error5");
+
+  if (nombre ===""){
+    error.textContent = "El alumno debe tener algun nombre";
+    error.classList.remove("d-none");
+    return;
+  }
+
+  let alumno;
+  if(empresa ===""){
+    alumno = new Alumno(nombre,curso);
+  }else{
+    alumno = new AlumnoFCT(nombre,curso,empresa);
+  }
+  let notas = [];
+  //Si las notas no estan vacias
+  if (textoNotas !== ""){
+    notas = textoNotas.split(",").map((texto) => Number(texto.trim()));
+  }
+  const hayNotaMala = notas.some((nota) => Number.isNaN(nota) || nota < 0 || nota > 10);
+  //Si hay nota mala, error
+  if(hayNotaMala){
+    error.textContent = "Las notas tienen que ser números entre 0 y 10, separados por comas.";
+    error.classList.remove("d-none");
+    return;
+  } //Sino, añadimos cada nota de notas al alumno
+  //else{   //Realmente no hace falta el else, el error nos saca con return
+  notas.forEach((nota) => alumno.anadirNota(nota));
+  //}
+
+  //meto el alumno y oculto el error anterior posible
+  alumnos.push(alumno);
+  error.classList.add("d-none");
+
+  //Vacio cada casilla cuando se ha metido, para que no se tenga que borrar y volver a escribir
+  document.querySelector("#nombre5").value = "";
+  document.querySelector("#empresa5").value = "";
+  document.querySelector("#notas5").value = "";
+
+  //pinto el alumno
+  pintarAlumnos();
+
+  console.log("Ejercicio 5, añadir nuevo alumno →", alumno);
+}
   // TODO: si hay notas, sepáralas con split(",") y conviértelas con map((texto) => Number(texto.trim())).
   //       Si alguna no es válida (some), error en #error5 y no sigas. Si todas lo son, añádelas con anadirNota().
   // TODO: añade el alumno a alumnos, oculta el error, vacía las casillas y llama a pintarAlumnos().
-}
 
 pintarAlumnos();
 
