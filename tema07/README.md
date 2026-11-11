@@ -2,16 +2,7 @@
 
 **Autor:** Jorge García Moreno · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
-> **Plantilla de la tarea 7.** Cómo usarla:
->
-> 1. Copia esta carpeta en tu repositorio de DWEC y cámbiale el nombre a `tema07`.
-> 2. `index.html` ya está maquetado: una card por ejercicio (el 6 tiene dos). No cambies los `id` ni el `onclick` de los botones.
-> 3. `js/app.js` trae una función por botón con `TODO`. Ya están hechas `pintarLista()`, `formatearEuros()`, `pintarAlumnos()` y un modelo en los ejercicios 3, 4 y 6.
-> 4. Flechas en todos los callbacks y nunca una flecha como método. Las funciones de los botones, con `function`.
-> 5. Sustituye las imágenes de `capturas/` por las tuyas, **con el mismo nombre**.
-> 6. Todo lo que va entre [corchetes] es un hueco: cámbialo por lo tuyo. Al terminar, borra este aviso.
-
-[Una o dos líneas: qué hay en esta carpeta y cómo se ve. Por ejemplo: abrir la carpeta en VS Code, pulsar **Go Live** y probar los botones con la consola abierta (F12).]
+En esta carpeta se encuentra el contenido correspondiente a la práctica 7 de Desarrollo Web en Entorno cliente, dentro de ésta se encuentra el index.html que es la página que permite visualizar toda la funcionalidad que he tenido que realizar, este README, una carpeta con las capturas correspondientes que aparecen aqui más abajo y una carpeta js con un archivo js correspondiente a las funcionalidades de la página. Se puede observar todo ejecutando los botones e introduciendo los datos necesarios de cada bloque y abriendo la consola con F12.
 
 ## Capturas
 
@@ -19,42 +10,45 @@
 
 <img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
 
-[Qué se ve nada más cargar: tu nombre y los dos alumnos de partida.]
-
+Aquí se puede ver mi nombre y cada uno de los bloques correspondientes a cada ejercicio.
 
 ### b) Ejercicios 1 y 2: el precio y las películas
 
 <img src="capturas/b-ej1-ej2.png" alt="El desglose del precio y una lista de películas" width="600">
 
 [Un precio con descuento y uno de los botones de las películas. Qué hace calcularPrecio() y qué hace mostrarPrecio().]
+calcularPrecio() calcula y devuelve el resultado correspondiente con el iva y con el descuento aplicadocon return, mientras que mostrarPrecio() lee las casillas, comprueba si ha habido algun error o si se ha equivocado al introducir el precio o el descuento y llama a calcularPrecio() para despues pintarlo con pintarLista.
 
 ### c) Ejercicios 3 y 4: tu callback y los contadores
 
 ![El resultado de transformar y los dos contadores](capturas/c-ej3-ej4.png)
 
-[Qué hace transformar() por dentro y por qué cada contador lleva su propia cuenta.]
+transformar crea un array vacío y lo recorre con for...of, en donde con cada número perteneciente al array lo guarda en uno nuevo con push realizando la operación correspondiente.
+Cada contador lleva su propia cuenta tal y como nos piden, cada llamada crearContador crea su propia variable cuenta y su propio paso, devolviendo los valores guardados dependiendo de quien la llama. Si escribimos cuenta en la consola sale un ReferenceError, ya que la variable cuenta solo existe dentro de crearContador.
 
 ### d) Ejercicio 5: los alumnos
 
 ![Las tarjetas de los alumnos](capturas/d-ej5-clases.png)
 
-[Al menos cuatro alumnos, alguno en prácticas. Cómo decide tu código si crea un Alumno o un AlumnoFCT.]
+Al crear un alumno, dependiendo del número de parámetros que utilizo a la hora de crear un nuevo objeto alumno, si le doy 3 parámetros (correspondiente a rellenar el atributo empresa) se crea un AlumnoFCT, sino, creo un Alumno.
 
 ### e) Ejercicio 6: fechas y textos
 
 ![Los días que faltan para una fecha y unas iniciales](capturas/e-ej6-fechas-textos.png)
 
-[Qué fecha has probado, cuántos días salen y por qué redondeas.]
+he probado el 28/11/2026, quedando 17 dias desde hoy. Redondeo debido a que al restar dos fechas salen milisegundos como resultado, usando Math.round se arregla.
 
 ## Reflexión
 
-[De 5 a 8 líneas: ¿qué cambia al pasar un callback de function a flecha? ¿Cuándo hace falta el return? ¿Por qué un método no se escribe con flecha? Pon un ejemplo de tu propio código.]
+Se utiliza una nueva estructura, en vez de poner function al principio se pone => despues de los parámetros de entrada, también, si la expresión es solo una línea (return) se pueden evitar las llaves y el propio return.
+La utilizacion de la flecha no permite usar referenciar al propio objeto (this), por lo que no puedo recoger sus variables cuando lo uso.
 
 ## Fuentes
-
-- [Título de la página](https://enlace-a-la-fuente)
+- Los apuntes del tema 7 de la asignatura.
+- [Funciones flecha](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [información adicional de toLocalDateString](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
 
 ## Uso de IA
-
 [Si has usado IA: qué herramienta, para qué y qué hiciste después con su respuesta. Si no la has usado, borra este apartado.]
-He utilizado Claude Code para que me haga un resumen del código proporcionado y para que me vaya ayudando cuando me he quedado atrancado en las tareas y para comprobar tras realizar cada ejercicio si me he saltado o me ha faltado alguna parte que no haya visto. Todo el código que he tenido que realizar, igualmente, ha sido escrito por mi mano.
+He utilizado Claude Code (Opus 5.5) para que me haga un resumen del código proporcionado y para que me vaya ayudando cuando me he quedado atrancado en las tareas y para comprobar tras realizar cada ejercicio si me he saltado o me ha faltado alguna parte que no haya visto. Todo el código que he tenido que realizar, igualmente, ha sido escrito por mi mano.
+En algunos apartados, en concreto en la parte de crear las iniciales del ejercico 6 he necesitado que me explicase paso a paso que voy obteniendo en la funcion para crear las iniciales del nombre como tal.
