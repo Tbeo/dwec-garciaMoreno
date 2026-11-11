@@ -1,6 +1,6 @@
 # Tarea 7 · Funciones, flechas y clases
 
-**Autor:** [Tu nombre y apellidos] · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
+**Autor:** Jorge García Moreno · Desarrollo Web en Entorno Cliente (DWEC) · 2.º DAW · Curso 2026-27
 
 > **Plantilla de la tarea 7.** Cómo usarla:
 >
@@ -20,6 +20,7 @@
 <img src="capturas/a-pagina.png" alt="La página recién cargada con mi nombre en la navbar" width="600">
 
 [Qué se ve nada más cargar: tu nombre y los dos alumnos de partida.]
+
 
 ### b) Ejercicios 1 y 2: el precio y las películas
 

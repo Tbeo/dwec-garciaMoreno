@@ -1,5 +1,5 @@
 /*
-  Tarea 7 · DWEC · [Tu nombre y apellidos]
+  Tarea 7 · DWEC · Jorge García Moreno
   Funciones, flechas y clases.
 
   Cómo usar esta plantilla:
@@ -213,7 +213,6 @@ function verDobles() {
 }
 
 function verCuadrados() {
-  // TODO: como verDobles(), con el cuadrado de cada número (n ** 2).
   const resultado = transformar(numeros, (n) => n**2);
   mostrar3("cuadrado", resultado, numeros.map((n) => n ** 2));
   console.log("Ejercicio 3: cuadrado ->", resultado);
@@ -452,7 +451,7 @@ function mostrarDias() {
 }
 
 function iniciales(nombreCompleto) {
-  const iniciales = nombreCompleto.trim().split(" ").filter( (palabra) => palabra !=="").map((palabra) => palabra.slice(0,1).toUpperCase()).join("");
+  const nombre = nombreCompleto.trim().split(" ").filter( (palabra) => palabra !=="").map((palabra) => palabra.slice(0,1).toUpperCase()).join("");
   return nombre;
 }
 
@@ -468,7 +467,7 @@ function crearUsuario(nombreCompleto) {
 
 function mostrarIniciales() {
 
-  const iniciales = document.querySelector("#nombre6").value.trim();
+  const nombre = document.querySelector("#nombre6").value.trim();
   const salida = document.querySelector("#salida6b");
 
   if (nombre === "") {
